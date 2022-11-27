@@ -1,0 +1,169 @@
+@import "nullstyle";
+
+$scroll-color: linear-gradient(180deg, #A00BC5 0%, #1B5454 100%);
+$scroll-color-hover: linear-gradient(180deg, #D012FF 0%, #0B9191 100%);
+$panels-color: linear-gradient(90deg, #161616 -23.12%, #262525 100%);
+
+@font-face {
+  font-family: "KharkivTone";
+  font-style: normal;
+  font-weight: 400;
+  // Браузер сначала попробует найти шрифт локально
+  src: local("KharkivTone"),
+    // Если не получилось, загрузит ttf
+  url("../fonts/KharkivTone.ttf") format("truetype");
+}
+
+%KharkivTone {
+  font-family: 'KharkivTone';
+  font-size: 32px;
+  font-weight: 400;
+  text-align: center;
+}
+
+body {
+  background: linear-gradient(72.21deg, #141812 -0.34%, #161422 28.25%, #1C0D0D 68.52%, #1A0623 96.34%);
+  display: grid;
+  justify-items: center;
+}
+
+.container {
+  width: 1164px;
+  height: 910px;
+}
+
+.scroll {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+
+  width: 60px;
+  height: 60px;
+  border-radius: 90px;
+  background: #A00BC5; // <-- верхний цвет
+  box-shadow: 0 -25px 20px -12px #1B5454 inset; //  <-- нижний цвет
+  transition: all 300ms;
+
+  &:hover {
+    background: #D012FF; // <-- верхний цвет
+    box-shadow: 0 -25px 20px -12px #0B9090 inset; // <-- нижний цвет
+  }
+}
+
+.introduction {
+  margin-top: 55px;
+  display: grid;
+  justify-items: end;
+}
+
+.workspace {
+  padding-top: 155px;
+  display: flex;
+  gap: 31px;
+
+  .toolbar {
+    width: 80px;
+    height: 80px;
+    border-radius: 15px;
+    background: $panels-color;
+
+    display: grid;
+    justify-items: center;
+    align-items: center;
+
+    .chevron {
+
+    }
+  }
+
+  .viewing-area {
+    width: 842px;
+    height: 553px;
+
+    background: white;
+    border: 6px solid #4D4C4C;
+    border-radius: 15px;
+
+    display: grid;
+    justify-items: center;
+    align-items: center;
+
+    .element {
+      width: 358px;
+      height: 128px;
+
+      background: #B72025;
+      border-radius: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .text {
+        @extend %KharkivTone;
+      }
+    }
+  }
+
+  .saves {
+    width: 181px;
+    height: 109px;
+    border-radius: 15px;
+    background: $panels-color;
+
+    .wrapper {
+      width: 100%;
+      height: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-bottom: 1px solid #000000;
+
+      .title {
+        @extend %KharkivTone;
+        color: #FFFFFF;
+        letter-spacing: 0.2em;
+      }
+    }
+
+    .open {
+      width: 100%;
+      height: 50%;
+
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+
+      .chevron {
+        height: 100%;
+      }
+    }
+  }
+}
+
+footer {
+  width: 1164px;
+  height: 143px;
+  display: grid;
+
+  .author {
+    @extend %KharkivTone;
+    letter-spacing: 0.2em;
+    color: #B1830D;
+    text-shadow: 0px 5px 4px rgba(251, 72, 255, 0.25);
+    -webkit-text-stroke: 0.3px #0047FF;
+    justify-self: center;
+
+    transition: color 300ms;
+
+    &:hover {
+      .nickname {
+        color: #FFB803;
+      }
+    }
+  }
+
+  .scroll-up {
+      justify-self: end;
+  }
+}
+

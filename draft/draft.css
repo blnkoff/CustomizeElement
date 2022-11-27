@@ -1,0 +1,39 @@
+@charset "UTF-8";
+@import "../css/nullstyle.css";
+.element {
+  width: 100px;
+  height: 100px;
+  background: #A00BC5;
+  box-shadow: 0 -50px 80px -12px #1B5454 inset;
+  transition: all 300ms;
+}
+
+.element:hover {
+  background: #D012FF;
+  box-shadow: 0 -50px 80px -12px #0B9090 inset;
+}
+
+/*@import "../css/nullstyle.css";
+
+.element {
+  width: 100px;
+  height: 100px;
+  background: #A00BC5;   // <-- верхний цвет
+  box-shadow: 0 -50px 80px -12px #1B5454 inset;    //  <-- нижний цвет
+
+}
+
+.element:hover {
+  //animation: background 3s normal 1 forwards;
+  animation: background 3s ease-out 1 normal running 0s forwards;
+}
+
+
+@keyframes background {
+  50% {
+    background: #D012FF;          // <-- верхний цвет
+    box-shadow: 0 -50px 80px -12px #0B9090 inset;       // <-- нижний цвет
+  }
+} */
+
+/*# sourceMappingURL=draft.css.map */

@@ -1,0 +1,24 @@
+
+АНИМАЦИЯ ГРАДИЕНТА
+
+
+DIV {
+width: 100%;
+max-width: 80%;
+height: 200px;
+background: gold;  <-- верхний цвет
+box-shadow: 0 -200px 100px -120px crimson inset;     <-- нижний цвет
+border-radius: 30px;
+border: 10px solid white;
+animation: background 3s infinite alternate;
+}
+
+@keyframes background {
+50% {
+background: skyblue;           <-- верхний цвет
+box-shadow: 0 -200px 100px -100px yellowgreen inset;       <-- нижний цвет
+}
+}
+
+
+http://css.yoksel.ru/animation-for-gradients/
