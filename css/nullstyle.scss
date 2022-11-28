@@ -5,10 +5,19 @@
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  list-style: none;
 }
 
 a {
   text-decoration: none;
+}
+
+img {
+  user-select: none;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 button::-moz-focus-inner {padding:0;border:0;}

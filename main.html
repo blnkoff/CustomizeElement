@@ -5,12 +5,13 @@
     <title>Change Element</title>
     <link rel="shortcut icon" href="img/favicon-16x16.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
+    <script src="script.js"></script>
 </head>
 <body>
 
 <div class="container introduction">
     <img class="illustration" src="img/content/illustration.svg" alt="ELEMENT CUSTOMIZE" draggable="false">
-    <div class="scroll scroll-down">
+    <div class="scroll scroll-down" onclick="scrollDown()">
         <img src="img/icons/arrow-down.svg" alt="Scroll Down" class="arrow-down arrow" draggable="false">
     </div>
 </div>
@@ -18,7 +19,9 @@
 
 <div class="container workspace">
     <div class="sidebar toolbar">
-        <img src="img/icons/chevron.svg" alt="Open" class="chevron" draggable="false">
+        <div class="open">
+            <img src="img/icons/chevron.svg" alt="Open" class="chevron chevron-down" draggable="false">
+        </div>
     </div>
 
     <div class="viewing-area">
@@ -32,18 +35,19 @@
             <p class="title">saves</p>
         </div>
         <div class="open">
-            <img src="img/icons/chevron.svg" alt="Open" class="chevron" draggable="false">
+            <img src="img/icons/chevron.svg" alt="Open" class="chevron chevron-down" draggable="false">
         </div>
     </div>
 </div>
 
 
-       <footer>
-           <div class="scroll scroll-up">
-               <img src="img/icons/arrow-up.svg" alt="Scroll Up" class="arrow-up arrow" draggable="false">
-           </div>
-           <a href="https://www.behance.net/blnkoff" class="author" target="_blank">AUTHOR: <span class="nickname">BLNK.OFF</span></a>
-       </footer>
+<footer>
+    <div class="scroll scroll-up" onclick="scrollUp()">
+        <img src="img/icons/arrow-up.svg" alt="Scroll Up" class="arrow-up arrow" draggable="false">
+    </div>
+    <a href="https://www.behance.net/blnkoff" class="author" target="_blank">AUTHOR: <span
+            class="nickname">BLNK.OFF</span></a>
+</footer>
 
 
 </body>
