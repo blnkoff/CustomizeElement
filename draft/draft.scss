@@ -1,9 +1,42 @@
-h1 {
-  font-family: Broadway;
+@import "../css/nullstyle";
 
-  transition: all 1s;
+$scroll-color: linear-gradient(180deg, #A00BC5 0%, #1B5454 100%);
+$scroll-color-hover: linear-gradient(180deg, #D012FF 0%, #0B9191 100%);
+$panels-color: linear-gradient(90deg, #161616 -23.12%, #262525 100%);
+
+.open, .hide {
+  transition: transform 300ms;
+
+  &:hover {
+    .chevron-down {
+      transform: translateY(7px);
+    }
+
+    .chevron-up {
+      transform: translateY(-7px);
+    }
+  }
+
+  .chevron {
+    transition: inherit;
+  }
 }
 
-h1:hover {
-  font-family: Arial;
+.toolbar {
+  width: 80px;
+  height: 80px;
+  border-radius: 15px;
+  background: $panels-color;
+  overflow: hidden;
+  display: grid;
+
+  transition: height 300ms;
+
+  .toolbar-btn, .empty {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+  }
 }
