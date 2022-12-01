@@ -5,7 +5,7 @@
 
 <h2 align="center">I'm a beginning UX/UI designer and Front-end developer</h3>
 
-<p style="font-size: 20px;; text-align: center">It's my pet project. A little graphic editor, so to speak</p>
+<p align="center" style="font-size: 20px;">It's my pet project. A little graphic editor, so to speak</p>
 
 
 
