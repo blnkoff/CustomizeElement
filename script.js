@@ -1,11 +1,15 @@
-function scrollUp() {
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+let introduction = document.querySelector('.introduction');
+let footer = document.querySelector('footer');
+
+let scrollDown = document.querySelector('.scroll-down');
+let scrollUp = document.querySelector('.scroll-up');
+
+scrollUp.onclick = () => {
+    introduction.scrollIntoView(false);
 }
 
-function scrollDown() {
-    document.body.scrollTop = 1990;
-    document.documentElement.scrollTop = 1990;
+scrollDown.onclick = () =>  {
+    footer.scrollIntoView(false);
 }
 
 //Добавить дерганье .illustration при движении мыши

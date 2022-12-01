@@ -1,24 +1,33 @@
+let chevronFromToolbar = document.querySelector('.toolbar-btn > .chevron');
+let toolbar = document.querySelector('.toolbar');
+let chevronFromSaves = document.querySelector('.saves-btn > .chevron');
+let openHideBtn = toolbar.firstElementChild;
 
-АНИМАЦИЯ ГРАДИЕНТА
-
-
-DIV {
-width: 100%;
-max-width: 80%;
-height: 200px;
-background: gold;  <-- верхний цвет
-box-shadow: 0 -200px 100px -120px crimson inset;     <-- нижний цвет
-border-radius: 30px;
-border: 10px solid white;
-animation: background 3s infinite alternate;
+function rotateChevron(chevron, degrees) {
+    chevron.style.transform = `rotate(${degrees}deg)`;
 }
 
-@keyframes background {
-50% {
-background: skyblue;           <-- верхний цвет
-box-shadow: 0 -200px 100px -100px yellowgreen inset;       <-- нижний цвет
-}
-}
+openHideBtn.onclick = () => {
+    if (openHideBtn.classList.contains('open')) {
+        toolbar.style.height = '720px';
+        toolbar.firstElementChild.style.order = '8 ';
+        chevronFromToolbar.classList.remove('chevron-down');
+        chevronFromToolbar.classList.add('chevron-up');
 
+        rotateChevron(chevronFromToolbar, 180);
 
-http://css.yoksel.ru/animation-for-gradients/
+        openHideBtn.classList.remove('open');
+        openHideBtn.classList.add('hide');
+    } else if (openHideBtn.classList.contains('hide')) {
+        toolbar.style.height = '80px';
+        toolbar.firstElementChild.style.order = '0';
+        chevronFromToolbar.classList.remove('chevron-up');
+        chevronFromToolbar.classList.add('chevron-down');
+
+        rotateChevron(chevronFromToolbar, 360);
+
+        openHideBtn.classList.remove('hide');
+        openHideBtn.classList.add('open');
+    }
+};
+
