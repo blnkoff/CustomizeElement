@@ -12,34 +12,37 @@
 
 <body>
 <div class="sidebar toolbar">
-    <div class="open toolbar-btn">
-        <img src="../img/icons/chevron.svg" alt="Open" class="chevron chevron-down" draggable="false">
+    <div class="open toolbar-btn" data-action="openHide" data-backgroundChange="false">
+        <img src="../img/icons/chevron.svg" alt="Open" class="chevron chevron-down" data-action="openHide">
     </div>
-
-    <div class="font toolbar-btn">
+    <div class="font toolbar-btn" data-action="font" data-backgroundChange="true">
         <img src="../img/icons/font.svg" alt="">
     </div>
-    <div class="underline toolbar-btn">
-        <img src="../img/icons/underline.svg" alt="">
+    <div class="underline toolbar-btn"  data-action="underline" data-backgroundChange="true">
+        <img src="../img/icons/underline.svg" alt="" data-action="underline">
     </div>
-    <div class="italic toolbar-btn">
+    <div class="italic toolbar-btn" data-backgroundChange="true" data-action="italic">
         <img src="../img/icons/italic.svg" alt="">
     </div>
-    <div class="color toolbar-btn">
+    <div class="color toolbar-btn" data-backgroundChange="true" data-action="color">
         <img src="../img/icons/color.svg" alt="">
     </div>
-    <div class="resize toolbar-btn">
+    <div class="resize toolbar-btn" data-backgroundChange="true" data-action="resize">
         <img src="../img/icons/resize.svg" alt="">
     </div>
-    <div class="download toolbar-btn">
+    <div class="download toolbar-btn" data-backgroundChange="true" data-action="download">
         <img src="../img/icons/download.svg" alt="">
     </div>
 
     <div class="empty"></div>
 
-    <div class="lock toolbar-btn">
+    <div class="lock toolbar-btn" data-backgroundChange="false" data-action="lock">
         <img src="../img/icons/lock.svg" alt="">
     </div>
+</div>
+
+<div class="element">
+    <p class="text">Your text will be placed here</p>
 </div>
 
 <script src="script.js"></script>

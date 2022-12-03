@@ -4,7 +4,25 @@ $scroll-color: linear-gradient(180deg, #A00BC5 0%, #1B5454 100%);
 $scroll-color-hover: linear-gradient(180deg, #D012FF 0%, #0B9191 100%);
 $panels-color: linear-gradient(90deg, #161616 -23.12%, #262525 100%);
 
-.open, .hide {
+@font-face {
+  font-family: "KharkivTone";
+  font-style: normal;
+  font-weight: 400;
+  // Браузер сначала попробует найти шрифт локально
+  src: local("KharkivTone"),
+    // Если не получилось, загрузит ttf
+  url("../fonts/KharkivTone.ttf") format("truetype");
+}
+
+%KharkivTone {
+  font-family: 'KharkivTone', sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.open,
+.hide {
   transition: transform 300ms;
 
   &:hover {
@@ -12,15 +30,17 @@ $panels-color: linear-gradient(90deg, #161616 -23.12%, #262525 100%);
       transform: translateY(7px);
     }
 
-    .chevron-up {
-      transform: translateY(-7px);
+    .chevron.chevron-up {
+      transform: rotate(180deg) translateY(7px);
     }
   }
 
   .chevron {
     transition: inherit;
 
-
+    &.chevron-up {
+      transform: rotate(180deg);
+    }
   }
 }
 
@@ -35,10 +55,35 @@ $panels-color: linear-gradient(90deg, #161616 -23.12%, #262525 100%);
   transition: height 300ms;
 
   .toolbar-btn, .empty {
-    display: grid;
-    justify-items: center;
-    align-items: center;
     width: 80px;
     height: 80px;
   }
+
+  .toolbar-btn{
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    transition: all 200ms;
+
+    &[data-backgroundChange="true"]:hover {
+      background: #2F2F2F;
+    }
+  }
 }
+
+
+.element {
+  width: 358px;
+  height: 128px;
+
+  background: #B72025;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .text {
+    @extend %KharkivTone;
+  }
+}
+

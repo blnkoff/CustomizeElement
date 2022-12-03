@@ -25,17 +25,38 @@ button::-moz-focus-inner {
   border: 0;
 }
 
-.open, .hide {
+@font-face {
+  font-family: "KharkivTone";
+  font-style: normal;
+  font-weight: 400;
+  src: local("KharkivTone"), url("../fonts/KharkivTone.ttf") format("truetype");
+}
+.element .text {
+  font-family: "KharkivTone", sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.open,
+.hide {
   transition: transform 300ms;
 }
-.open:hover .chevron-down, .hide:hover .chevron-down {
+.open:hover .chevron-down,
+.hide:hover .chevron-down {
   transform: translateY(7px);
 }
-.open:hover .chevron-up, .hide:hover .chevron-up {
-  transform: translateY(-7px);
+.open:hover .chevron.chevron-up,
+.hide:hover .chevron.chevron-up {
+  transform: rotate(180deg) translateY(7px);
 }
-.open .chevron, .hide .chevron {
+.open .chevron,
+.hide .chevron {
   transition: inherit;
+}
+.open .chevron.chevron-up,
+.hide .chevron.chevron-up {
+  transform: rotate(180deg);
 }
 
 .toolbar {
@@ -48,11 +69,27 @@ button::-moz-focus-inner {
   transition: height 300ms;
 }
 .toolbar .toolbar-btn, .toolbar .empty {
+  width: 80px;
+  height: 80px;
+}
+.toolbar .toolbar-btn {
   display: grid;
   justify-items: center;
   align-items: center;
-  width: 80px;
-  height: 80px;
+  transition: all 200ms;
+}
+.toolbar .toolbar-btn[data-backgroundChange=true]:hover {
+  background: #2F2F2F;
+}
+
+.element {
+  width: 358px;
+  height: 128px;
+  background: #B72025;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /*# sourceMappingURL=draft.css.map */

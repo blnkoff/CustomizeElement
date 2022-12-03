@@ -1,33 +1,60 @@
-let chevronFromToolbar = document.querySelector('.toolbar-btn > .chevron');
-let toolbar = document.querySelector('.toolbar');
-let chevronFromSaves = document.querySelector('.saves-btn > .chevron');
-let openHideBtn = toolbar.firstElementChild;
+.open {
+  transition: transform 300ms;
 
-function rotateChevron(chevron, degrees) {
-    chevron.style.transform = `rotate(${degrees}deg)`;
+  &:hover {
+    .chevron-down {
+      transform: translateY(7px);
+    }
+  }
+
+  .chevron {
+    transition: inherit;
+    &.chevron-up {
+      transform: rotate(180deg);
+    }
+  }
 }
 
-openHideBtn.onclick = () => {
-    if (openHideBtn.classList.contains('open')) {
-        toolbar.style.height = '720px';
-        toolbar.firstElementChild.style.order = '8 ';
-        chevronFromToolbar.classList.remove('chevron-down');
-        chevronFromToolbar.classList.add('chevron-up');
+.hide {
+  transition: transform 300ms;
 
-        rotateChevron(chevronFromToolbar, 180);
-
-        openHideBtn.classList.remove('open');
-        openHideBtn.classList.add('hide');
-    } else if (openHideBtn.classList.contains('hide')) {
-        toolbar.style.height = '80px';
-        toolbar.firstElementChild.style.order = '0';
-        chevronFromToolbar.classList.remove('chevron-up');
-        chevronFromToolbar.classList.add('chevron-down');
-
-        rotateChevron(chevronFromToolbar, 360);
-
-        openHideBtn.classList.remove('hide');
-        openHideBtn.classList.add('open');
+  &:hover {
+    .chevron-up {
+      transform: rotate(180deg) translateY(7px);
     }
-};
+  }
 
+  .chevron {
+    transition: inherit;
+    &.chevron-down {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+ВОТ ЭТО НЕ РАБОТАЕТ
+
+.open,
+.hide {
+  transition: transform 300ms;
+
+  &:hover {
+    .chevron-down {
+      transform: translateY(7px);
+    }
+
+    .chevron.chevron-up {
+      transform: rotate(180deg) translateY(7px);
+    }
+  }
+
+  .chevron {
+    transition: inherit;
+
+    &.chevron-up {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+А ВОТ ЭТО РАБОТАЕТ
