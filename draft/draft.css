@@ -99,7 +99,8 @@ button::-moz-focus-inner {
   display: grid;
   align-items: center;
   justify-items: center;
-  visibility: hidden;
+  transition: opacity 300ms;
+  opacity: 0;
 }
 
 /*# sourceMappingURL=draft.css.map */

@@ -42,7 +42,7 @@ class Toolbar {
         querySelector: document.querySelector('.underline'),
         action () {
             let textToUnderline = Toolbar.currentElement.querySelector('.text').style.textDecoration;
-            if (textToUnderline == 'underline') {
+            if (textToUnderline === 'underline') {
                 Toolbar.currentElement.querySelector('.text').style.textDecoration = 'none';
                 Toolbar.underline.querySelector.style.background = '';
             }
@@ -61,12 +61,12 @@ class Toolbar {
         querySelector: document.querySelector('.color'),
         action () {
             let wrapper = document.querySelector('.wrapper');
-            let visibilityStatus = wrapper.style.visibility === 'visible';
+            let visibilityStatus = wrapper.style.opacity === '1';
             if (visibilityStatus) {
-                wrapper.style.visibility = 'hidden';
+                wrapper.style.opacity = '0';
             }
             else {
-                wrapper.style.visibility = 'visible';
+                wrapper.style.opacity = '1';
             }
         }
     };
@@ -91,10 +91,6 @@ class Toolbar {
     };
     //Разобраться побольше в делигировании
     //Добавить bold
-}
-
-class Saves {
-
 }
 
 class JSONSave {

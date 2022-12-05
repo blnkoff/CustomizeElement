@@ -87,7 +87,7 @@ $panels-color: linear-gradient(90deg, #161616 -23.12%, #262525 100%);
   }
 }
 
-.wrapper {
+.wrapper{
   width: 340px;
   height: 314px;
   background: black;
@@ -96,8 +96,11 @@ $panels-color: linear-gradient(90deg, #161616 -23.12%, #262525 100%);
   display: grid;
   align-items: center;
   justify-items: center;
+  transition: opacity 300ms;
 
-  visibility: hidden;
-
+  opacity: 0;
 }
+
+
+
 

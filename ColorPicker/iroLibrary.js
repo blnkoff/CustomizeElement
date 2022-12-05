@@ -1,9 +1,3 @@
-/*!
- * iro.js v5.5.2
- * 2016-2021 James Daniel
- * Licensed under MPL 2.0
- * github.com/jaames/iro.js
- */
 !function (t, n) {
     "object" == typeof exports && "undefined" != typeof module ? module.exports = n() : "function" == typeof define && define.amd ? define(n) : (t = t || self).iro = n()
 }(this, function () {

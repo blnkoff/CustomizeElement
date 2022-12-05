@@ -13,14 +13,14 @@ let colorPicker = new iro.ColorPicker("#colorPicker", {
         {
             component: iro.ui.Slider,
             options: {
-                // can also be 'saturation', 'value', 'red', 'green', 'blue', 'alpha' or 'kelvin'
                 sliderType: 'hue'
             }
         },
     ]
 });
 
-let hex = colorPicker.color.hexString;
-console.log(hex);
-setTimeout(() => hex = colorPicker.color.hexString, 4000);
-setTimeout(() => console.log(hex), 5000);
+colorPicker.on('color:change', function(color) {
+    if (document.querySelector('.wrapper').style.opacity === '1')
+        document.querySelector('.element').style.background = color.hexString;
+});
+
