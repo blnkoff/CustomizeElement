@@ -58,7 +58,17 @@ class Toolbar {
     };
 
     static color = {
-        querySelector: document.querySelector('.color')
+        querySelector: document.querySelector('.color'),
+        action () {
+            let wrapper = document.querySelector('.wrapper');
+            let visibilityStatus = wrapper.style.visibility === 'visible';
+            if (visibilityStatus) {
+                wrapper.style.visibility = 'hidden';
+            }
+            else {
+                wrapper.style.visibility = 'visible';
+            }
+        }
     };
 
     static resize = {
@@ -80,9 +90,16 @@ class Toolbar {
         }
     };
     //Разобраться побольше в делигировании
+    //Добавить bold
 }
 
-//Добавить bold
+class Saves {
+
+}
+
+class JSONSave {
+
+}
 
 class fontFamily {
 

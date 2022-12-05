@@ -1,6 +1,6 @@
-var colorPicker = new iro.ColorPicker("#picker", {
+let colorPicker = new iro.ColorPicker("#colorPicker", {
     // Set the size of the color picker
-    width: 320,
+    width: 266,
     // Set the initial color to pure red
     color: "#f00",
     layoutDirection: "horizontal",
@@ -20,7 +20,7 @@ var colorPicker = new iro.ColorPicker("#picker", {
     ]
 });
 
-var hex = colorPicker.color.hexString;
+let hex = colorPicker.color.hexString;
 console.log(hex);
 setTimeout(() => hex = colorPicker.color.hexString, 4000);
 setTimeout(() => console.log(hex), 5000);

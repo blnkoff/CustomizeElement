@@ -87,3 +87,17 @@ $panels-color: linear-gradient(90deg, #161616 -23.12%, #262525 100%);
   }
 }
 
+.wrapper {
+  width: 340px;
+  height: 314px;
+  background: black;
+  border-radius: 15px;
+
+  display: grid;
+  align-items: center;
+  justify-items: center;
+
+  visibility: hidden;
+
+}
+

@@ -91,5 +91,15 @@ button::-moz-focus-inner {
   flex-direction: column;
   justify-content: center;
 }
+.wrapper {
+  width: 340px;
+  height: 314px;
+  background: black;
+  border-radius: 15px;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  visibility: hidden;
+}
 
 /*# sourceMappingURL=draft.css.map */

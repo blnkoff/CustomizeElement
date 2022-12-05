@@ -25,7 +25,7 @@
         <img src="../img/icons/italic.svg" alt="">
     </div>
     <div class="color toolbar-btn" data-backgroundChange="true" data-action="color">
-        <img src="../img/icons/color.svg" alt="">
+        <img src="../img/icons/color.svg" alt="" data-action="color">
     </div>
     <div class="resize toolbar-btn" data-backgroundChange="true" data-action="resize">
         <img src="../img/icons/resize.svg" alt="">
@@ -41,10 +41,16 @@
     </div>
 </div>
 
+<div class="wrapper">
+    <div id="colorPicker"></div>
+</div>
+
 <div class="element">
     <p class="text">Your text will be placed here</p>
 </div>
 
 <script src="script.js"></script>
+<script src="../ColorPicker/iroLibrary.js"></script>
+<script src="../ColorPicker/colorPicker.js"></script>
 </body>
 </html>
