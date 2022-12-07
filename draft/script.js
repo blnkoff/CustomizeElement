@@ -80,7 +80,23 @@ class Toolbar {
     };
 
     static lock = {
-        querySelector: document.querySelector('.lock')
+        querySelector: document.querySelector('.lock'),
+        action () {
+            let lockBtn = Toolbar.lock.querySelector;
+            if (lockBtn.classList.contains('unlocked')) {
+                lockBtn.classList.remove('unlocked');
+                lockBtn.classList.add('locked');
+                Toolbar.querySelector.removeEventListener("click", Toolbar.onClick);
+                lockBtn.addEventListener("click", Toolbar.lock.action);
+            }
+            else {
+                lockBtn.classList.remove('locked');
+                lockBtn.classList.add('unlocked');
+                lockBtn.removeEventListener("click", Toolbar.lock.action);
+                Toolbar.querySelector.addEventListener("click",Toolbar.onClick);
+            }
+            console.log(lockBtn.classList.contains('unlocked'));
+        }
     };
 
     static onClick (event) {
@@ -91,7 +107,31 @@ class Toolbar {
     };
     //Разобраться побольше в делигировании
     //Добавить bold
+
+    static getBtnSelectors () {
+        let selectors = [];
+
+        for (let property in Toolbar) {
+            selectors.push(property);
+            console.log(property);
+        }
+
+        return selectors;
+    }
 }
+
+Object.defineProperties(Toolbar, {
+    'querySelector': {
+        enumerable: false,
+        writable: true,
+        configurable: true
+    },
+    'currentElement': {
+        enumerable: false,
+        writable: true,
+        configurable: true
+    },
+});
 
 class JSONSave {
 
@@ -102,6 +142,10 @@ class fontFamily {
 }
 
 Toolbar.querySelector.addEventListener("click",Toolbar.onClick);
+
+Toolbar.getBtnSelectors();
+
+
 
 
 
