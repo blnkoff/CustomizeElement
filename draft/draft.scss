@@ -17,7 +17,7 @@ $panels-color: linear-gradient(90deg, #161616 -23.12%, #262525 100%);
 %KharkivTone {
   font-family: 'KharkivTone', sans-serif;
   font-size: 32px;
-  font-weight: 400;
+
   text-align: center;
 }
 
@@ -99,6 +99,72 @@ $panels-color: linear-gradient(90deg, #161616 -23.12%, #262525 100%);
   transition: opacity 300ms;
 
   opacity: 0;
+}
+
+.resizePopUp {
+  background: #2F2F2F;
+  display: flex;
+  border-radius: 0px 15px 15px 0px;
+  gap: 10px;
+  width: 500px;
+  overflow: hidden;
+  transition: opacity 300ms;
+  opacity: 0;
+
+  .width-field {
+    padding-left: 20px;
+  }
+
+
+  .width-field, .height-field {
+    display: grid;
+    grid-template-columns: 255px 78px 28px;
+    grid-template-rows: 1fr;
+    grid-gap: 15px;
+
+    p {
+      @extend %KharkivTone;
+      font-size: 20px;
+      color: white;
+      display: grid;
+      justify-items: center;
+      align-items: center;
+    }
+
+    .size {
+      text-decoration: underline;
+    }
+  }
+
+  .open,
+  .hide {
+    min-height: 80px;
+    min-width: 80px;
+
+    display: grid;
+    justify-items: center;
+    align-items: center;
+
+    transition: transform 300ms;
+
+    &:hover {
+      .chevron-right {
+        transform: translateX(7px);
+      }
+
+      .chevron.chevron-left {
+        transform: rotate(180deg) translateX(7px);
+      }
+    }
+
+    .chevron {
+      transition: inherit;
+
+      &.chevron-left {
+        transform: rotate(180deg);
+      }
+    }
+  }
 }
 
 

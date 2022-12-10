@@ -13,7 +13,7 @@
 <body>
 <div class="sidebar toolbar">
     <div class="open toolbar-btn" data-action="openHide" data-backgroundChange="false">
-        <img src="../img/icons/chevron.svg" alt="Open" class="chevron chevron-down" data-action="openHide">
+        <img src="../img/icons/chevron up-down.svg" alt="Open" class="chevron chevron-down" data-action="openHide">
     </div>
     <div class="font toolbar-btn" data-action="font" data-backgroundChange="true">
         <img src="../img/icons/font.svg" alt="">
@@ -36,8 +36,26 @@
 
     <div class="empty"></div>
 
-    <div class="lock toolbar-btn unlocked" data-backgroundChange="false" data-action="lock">
-        <img src="../img/icons/lock.svg" alt="" data-action="lock">
+    <div class="lock toolbar-btn unlocked" data-backgroundChange="false">
+        <img src="../img/icons/lock.svg" alt="">
+    </div>
+</div>
+
+<div class="resizePopUp popUp">
+    <div class="width-field">
+        <input type="range" class="width">
+        <p class="size">360px</p>
+        <p class="field-type">:W</p>
+    </div>
+
+    <div class="open popUp-btn toolbar-btn">
+        <img class="chevron chevron-right" src="../img/icons/chevron left-right.svg" alt="">
+    </div>
+
+    <div class="height-field">
+        <input type="range" class="height">
+        <p class="size">130px</p>
+        <p class="field-type">:H</p>
     </div>
 </div>
 

@@ -31,10 +31,9 @@ button::-moz-focus-inner {
   font-weight: 400;
   src: local("KharkivTone"), url("../fonts/KharkivTone.ttf") format("truetype");
 }
-.element .text {
+.resizePopUp .width-field p, .resizePopUp .height-field p, .element .text {
   font-family: "KharkivTone", sans-serif;
   font-size: 32px;
-  font-weight: 400;
   text-align: center;
 }
 
@@ -101,6 +100,61 @@ button::-moz-focus-inner {
   justify-items: center;
   transition: opacity 300ms;
   opacity: 0;
+}
+
+.resizePopUp {
+  background: #2F2F2F;
+  display: flex;
+  border-radius: 0px 15px 15px 0px;
+  gap: 10px;
+  width: 500px;
+  overflow: hidden;
+  transition: opacity 300ms;
+  opacity: 0;
+}
+.resizePopUp .width-field {
+  padding-left: 20px;
+}
+.resizePopUp .width-field, .resizePopUp .height-field {
+  display: grid;
+  grid-template-columns: 255px 78px 28px;
+  grid-template-rows: 1fr;
+  grid-gap: 15px;
+}
+.resizePopUp .width-field p, .resizePopUp .height-field p {
+  font-size: 20px;
+  color: white;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+.resizePopUp .width-field .size, .resizePopUp .height-field .size {
+  text-decoration: underline;
+}
+.resizePopUp .open,
+.resizePopUp .hide {
+  min-height: 80px;
+  min-width: 80px;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  transition: transform 300ms;
+}
+.resizePopUp .open:hover .chevron-right,
+.resizePopUp .hide:hover .chevron-right {
+  transform: translateX(7px);
+}
+.resizePopUp .open:hover .chevron.chevron-left,
+.resizePopUp .hide:hover .chevron.chevron-left {
+  transform: rotate(180deg) translateX(7px);
+}
+.resizePopUp .open .chevron,
+.resizePopUp .hide .chevron {
+  transition: inherit;
+}
+.resizePopUp .open .chevron.chevron-left,
+.resizePopUp .hide .chevron.chevron-left {
+  transform: rotate(180deg);
 }
 
 /*# sourceMappingURL=draft.css.map */
