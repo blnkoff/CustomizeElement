@@ -139,7 +139,7 @@ class Toolbar {
     static onClick(event) {
         let dataAction = event.target.dataset.action;
         if (dataAction) {
-            if (dataAction != "openHide") {
+            if (dataAction !== "openHide") {
                 Toolbar[dataAction].action();
             } else {
                 let nodeType = event.target.parentElement;
@@ -149,7 +149,7 @@ class Toolbar {
                     nodeType = nodeType.parentElement;
                 }
 
-                if (nodeType.classList[1] != "toolbar-btn") {
+                if (nodeType.classList[1] !== "toolbar-btn") {
                     type = nodeType.classList[1];
                 }
                 Toolbar[dataAction][type].action();
@@ -186,19 +186,10 @@ Object.defineProperties(Toolbar, {
     },
 });
 
-class JSONSave {
-
-}
-
-class fontFamily {
-
-}
-
 Toolbar.querySelector.addEventListener("click", Toolbar.onClick);
 Toolbar.lock.querySelector.addEventListener("click", Toolbar.lock.action);
 Toolbar.openHide.resizePopUp.querySelector.addEventListener("click", Toolbar.openHide.resizePopUp.action);
 
 
-console.log(Toolbar.openHide.resizePopUp.querySelector);
 
 

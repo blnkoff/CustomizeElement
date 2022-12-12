@@ -109,7 +109,7 @@ button::-moz-focus-inner {
   gap: 10px;
   width: 500px;
   overflow: hidden;
-  transition: opacity 300ms;
+  transition: all 300ms;
   opacity: 0;
 }
 .resizePopUp .width-field {
