@@ -8,6 +8,10 @@
   list-style: none;
 }
 
+input[type=range]:focus {
+  outline: 0;
+}
+
 a {
   text-decoration: none;
 }
@@ -25,6 +29,10 @@ button::-moz-focus-inner {
   border: 0;
 }
 
+body {
+  padding-bottom: 300px;
+}
+
 @font-face {
   font-family: "KharkivTone";
   font-style: normal;
@@ -35,27 +43,6 @@ button::-moz-focus-inner {
   font-family: "KharkivTone", sans-serif;
   font-size: 32px;
   text-align: center;
-}
-
-.open,
-.hide {
-  transition: transform 300ms;
-}
-.open:hover .chevron-down,
-.hide:hover .chevron-down {
-  transform: translateY(7px);
-}
-.open:hover .chevron.chevron-up,
-.hide:hover .chevron.chevron-up {
-  transform: rotate(180deg) translateY(7px);
-}
-.open .chevron,
-.hide .chevron {
-  transition: inherit;
-}
-.open .chevron.chevron-up,
-.hide .chevron.chevron-up {
-  transform: rotate(180deg);
 }
 
 .toolbar {
@@ -79,6 +66,26 @@ button::-moz-focus-inner {
 }
 .toolbar .toolbar-btn[data-backgroundChange=true]:hover {
   background: #2F2F2F;
+}
+.toolbar .open,
+.toolbar .hide {
+  transition: transform 300ms;
+}
+.toolbar .open:hover .chevron-down,
+.toolbar .hide:hover .chevron-down {
+  transform: translateY(7px);
+}
+.toolbar .open:hover .chevron.chevron-up,
+.toolbar .hide:hover .chevron.chevron-up {
+  transform: rotate(180deg) translateY(7px);
+}
+.toolbar .open .chevron,
+.toolbar .hide .chevron {
+  transition: inherit;
+}
+.toolbar .open .chevron.chevron-up,
+.toolbar .hide .chevron.chevron-up {
+  transform: rotate(180deg);
 }
 
 .element {
@@ -105,7 +112,7 @@ button::-moz-focus-inner {
 .resizePopUp {
   background: #2F2F2F;
   display: flex;
-  border-radius: 0px 15px 15px 0px;
+  border-radius: 0 15px 15px 0;
   gap: 10px;
   width: 500px;
   overflow: hidden;
@@ -155,6 +162,10 @@ button::-moz-focus-inner {
 .resizePopUp .open .chevron.chevron-left,
 .resizePopUp .hide .chevron.chevron-left {
   transform: rotate(180deg);
+}
+
+.fontPopUp input {
+  border: 1px solid black;
 }
 
 /*# sourceMappingURL=draft.css.map */

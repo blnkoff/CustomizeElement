@@ -4,6 +4,10 @@ $scroll-color: linear-gradient(180deg, #A00BC5 0%, #1B5454 100%);
 $scroll-color-hover: linear-gradient(180deg, #D012FF 0%, #0B9191 100%);
 $panels-color: linear-gradient(90deg, #161616 -23.12%, #262525 100%);
 
+body {
+  padding-bottom: 300px;
+}
+
 @font-face {
   font-family: "KharkivTone";
   font-style: normal;
@@ -18,30 +22,6 @@ $panels-color: linear-gradient(90deg, #161616 -23.12%, #262525 100%);
   font-family: 'KharkivTone', sans-serif;
   font-size: 32px;
   text-align: center;
-}
-
-
-.open,
-.hide {
-  transition: transform 300ms;
-
-  &:hover {
-    .chevron-down {
-      transform: translateY(7px);
-    }
-
-    .chevron.chevron-up {
-      transform: rotate(180deg) translateY(7px);
-    }
-  }
-
-  .chevron {
-    transition: inherit;
-
-    &.chevron-up {
-      transform: rotate(180deg);
-    }
-  }
 }
 
 .toolbar {
@@ -69,8 +49,30 @@ $panels-color: linear-gradient(90deg, #161616 -23.12%, #262525 100%);
       background: #2F2F2F;
     }
   }
-}
 
+  .open,
+  .hide {
+    transition: transform 300ms;
+
+    &:hover {
+      .chevron-down {
+        transform: translateY(7px);
+      }
+
+      .chevron.chevron-up {
+        transform: rotate(180deg) translateY(7px);
+      }
+    }
+
+    .chevron {
+      transition: inherit;
+
+      &.chevron-up {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
 
 .element {
   width: 358px;
@@ -104,7 +106,7 @@ $panels-color: linear-gradient(90deg, #161616 -23.12%, #262525 100%);
 .resizePopUp {
   background: #2F2F2F;
   display: flex;
-  border-radius: 0px 15px 15px 0px;
+  border-radius: 0 15px 15px 0;
   gap: 10px;
   width: 500px;
   overflow: hidden;
@@ -164,6 +166,12 @@ $panels-color: linear-gradient(90deg, #161616 -23.12%, #262525 100%);
         transform: rotate(180deg);
       }
     }
+  }
+}
+
+.fontPopUp {
+  input {
+    border: 1px solid black;
   }
 }
 

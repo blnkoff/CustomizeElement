@@ -15,22 +15,22 @@
     <div class="open toolbar-btn" data-action="openHide" data-backgroundChange="false">
         <img src="../img/icons/chevron up-down.svg" alt="Open" class="chevron chevron-down" data-action="openHide">
     </div>
-    <div class="font toolbar-btn" data-action="font" data-backgroundChange="true">
+    <div class="font toolbar-btn" data-action="font" data-backgroundChange="true" data-type="popUp">
         <img src="../img/icons/font.svg" alt="">
     </div>
-    <div class="underline toolbar-btn"  data-action="underline" data-backgroundChange="true">
+    <div class="underline toolbar-btn" data-action="underline" data-backgroundChange="true">
         <img src="../img/icons/underline.svg" alt="" data-action="underline">
     </div>
     <div class="italic toolbar-btn" data-backgroundChange="true" data-action="italic">
         <img src="../img/icons/italic.svg" alt="">
     </div>
-    <div class="color toolbar-btn" data-backgroundChange="true" data-action="color">
+    <div class="color toolbar-btn" data-backgroundChange="true" data-action="color" data-type="popUp">
         <img src="../img/icons/color.svg" alt="" data-action="color">
     </div>
-    <div class="resize toolbar-btn" data-backgroundChange="true" data-action="resize">
+    <div class="resize toolbar-btn" data-backgroundChange="true" data-action="resize" data-type="popUp">
         <img src="../img/icons/resize.svg" alt="" data-action="resize">
     </div>
-    <div class="download toolbar-btn" data-backgroundChange="true" data-action="download">
+    <div class="download toolbar-btn" data-backgroundChange="true" data-action="download" data-type="popUp">
         <img src="../img/icons/download.svg" alt="">
     </div>
 
@@ -43,21 +43,40 @@
 
 <div class="resizePopUp popUp">
     <div class="width-field">
-        <input type="range" class="width" max="1000">
+        <input type="range" class="width" max="1000" value="360">
         <p class="size">360px</p>
         <p class="field-type">:W</p>
     </div>
 
-    <div class="open popUp-btn toolbar-btn">
-        <img class="chevron chevron-right" src="../img/icons/chevron left-right.svg" alt="">
+    <div class="open popUp-btn toolbar-btn" data-action="openHide">
+        <img class="chevron chevron-right" src="../img/icons/chevron left-right.svg" alt="" data-action="openHide">
     </div>
 
     <div class="height-field">
-        <input type="range" class="height" max="1000">
+        <input type="range" class="height" max="1000" value="130">
         <p class="size">130px</p>
         <p class="field-type">:H</p>
     </div>
 </div>
+
+<div class="fontPopUp popUp">
+    <input list="fontSelection">
+
+    <datalist id="fontSelection">
+        <option value="Kharkiv Tone">
+        <option value="Arial">
+    </datalist>
+
+    <input list="sizeSelection" value="32px">
+    <datalist id="sizeSelection">
+        <option value="31px"></option>
+        <option value="32px"></option>
+    </datalist>
+
+    <div class="editContent"></div>
+</div>
+
+
 
 <div class="wrapper">
     <div class="colorPicker" id="colorPicker"></div>

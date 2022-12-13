@@ -152,13 +152,11 @@ class Toolbar {
                 if (nodeType.classList[1] !== "toolbar-btn") {
                     type = nodeType.classList[1];
                 }
-                Toolbar[dataAction][type].action();
+                console.log(type);
+                Toolbar.openHide[type].action();
             }
         }
     };
-
-    //Разобраться побольше в делигировании
-    //Добавить bold
 
     static getBtnSelectors() {
         let selectors = [];
@@ -189,6 +187,7 @@ Object.defineProperties(Toolbar, {
 Toolbar.querySelector.addEventListener("click", Toolbar.onClick);
 Toolbar.lock.querySelector.addEventListener("click", Toolbar.lock.action);
 Toolbar.openHide.resizePopUp.querySelector.addEventListener("click", Toolbar.openHide.resizePopUp.action);
+//Исправить строку выше
 
 
 
