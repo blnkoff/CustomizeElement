@@ -10,6 +10,12 @@
 
 </head>
 
+<script defer src="toolbar.js"></script>
+<script defer src="../ColorPicker/iroLibrary.js"></script>
+<script defer src="../ColorPicker/colorPicker.js"></script>
+<script defer src="popUp.js"></script>
+<script defer src="dropdown/dropdown.js"></script>
+
 <body>
 <div class="sidebar toolbar">
     <div class="open toolbar-btn" data-action="openHide" data-backgroundChange="false">
@@ -60,23 +66,18 @@
 </div>
 
 <div class="fontPopUp popUp">
-    <input list="fontSelection">
-
-    <datalist id="fontSelection">
-        <option value="Kharkiv Tone">
-        <option value="Arial">
-    </datalist>
-
-    <input list="sizeSelection" value="32px">
-    <datalist id="sizeSelection">
-        <option value="31px"></option>
-        <option value="32px"></option>
-    </datalist>
-
-    <div class="editContent"></div>
+    <div class='fontSelection'>
+        <div class="select">
+            <input type="text" class="fontPopUpInput fontSelectionInput">
+            <button class="open"></button>
+        </div>
+        <ul class="list">
+            <li>Kharkiv Tone</li>
+            <li>Arial</li>
+            <li>Calibri</li>
+        </ul>
+    </div>
 </div>
-
-
 
 <div class="wrapper">
     <div class="colorPicker" id="colorPicker"></div>
@@ -86,9 +87,5 @@
     <p class="text">Your text will be placed here</p>
 </div>
 
-<script src="toolbar.js"></script>
-<script src="../ColorPicker/iroLibrary.js"></script>
-<script src="../ColorPicker/colorPicker.js"></script>
-<script src="popUp.js"></script>
 </body>
 </html>

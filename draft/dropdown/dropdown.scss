@@ -1,0 +1,86 @@
+@import "../../css/templates";
+
+@font-face {
+  font-family: "Kharkiv Tone";
+  font-style: normal;
+  font-weight: 400;
+  src: local("KharkivTone"),
+  url("../../fonts/KharkivTone.ttf") format("truetype");
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: pink;
+}
+
+
+.fontSelection {
+  display: inline-block;
+
+  .select {
+    box-sizing: border-box;
+    background: white;
+    width: 243px;
+    height: 45px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+    .open {
+      width: 27px;
+      height: 27px;
+      background: black url("../../img/icons/chevron up-down.svg");
+      background-size: 100%;
+      border-radius: 3px;
+
+      align-self: center;
+    }
+
+    input {
+      font-family: Kharkiv Tone, serif;
+      font-size: 20px;
+      border: 0;
+      padding: 0;
+      height: 45px;
+      width: 190px;
+      background: none;
+
+      &:focus {
+        border: 0;
+        outline: 0;
+      }
+    }
+  }
+
+  ul {
+    display: none;
+    border: 1px solid;
+    margin: 0;
+    padding: 0;
+    @extend %KharkivTone;
+    font-size: 20px;
+    list-style-type: none;
+
+    li {
+      user-select: none;
+      text-align: left;
+      padding-left: 30px;
+    }
+  }
+
+  ul.on {
+    display: block;
+  }
+}
+
+
+//.fontSelection ul {
+//  display: none;
+//  border: 1px solid;
+//  list-style-type: none;
+//  list-style-position: outside;
+//}

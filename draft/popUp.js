@@ -1,7 +1,15 @@
 class popUp {
     static currentElement = document.querySelector('.element');
-    static font = {};
-
+    static font = {
+        querySelector: document.querySelector('.fontPopUp'),
+        fontSelection: {
+            querySelector: document.querySelector('.fontSelectionInput'),
+            action () {
+                console.log(popUp.currentElement);
+                popUp.currentElement.style.fontFamily = popUp.font.fontSelection.querySelector.value;
+            }
+        }
+    };
     static color = {};
     static resize = {
         querySelector: document.querySelector('.resizePopUp'),
@@ -9,7 +17,7 @@ class popUp {
             querySelector: document.querySelector('.width'),
             action() {
                 if (popUp.opacityValidation(popUp.resize.querySelector)) {
-                    let currentValue = String(popUp.resize.width.querySelector.value)+'px';
+                    let currentValue = popUp.resize.width.querySelector.value+'px';
                     popUp.currentElement.style.width = currentValue;
                     popUp.resize.width.size.querySelector.textContent = currentValue;
                 }
@@ -21,7 +29,7 @@ class popUp {
         height: {
             querySelector: document.querySelector('.height'),
             action() {
-                let currentValue = String(popUp.resize.height.querySelector.value)+'px';
+                let currentValue = popUp.resize.height.querySelector.value+'px';
                 popUp.currentElement.style.height = currentValue;
                 popUp.resize.height.size.querySelector.textContent = currentValue;
             },
@@ -43,3 +51,6 @@ class popUp {
 
 popUp.resize.width.querySelector.addEventListener('input', popUp.resize.width.action);
 popUp.resize.height.querySelector.addEventListener('input', popUp.resize.height.action);
+popUp.font.fontSelection.querySelector.addEventListener('my-little-event', function (){
+    console.log(this);
+});

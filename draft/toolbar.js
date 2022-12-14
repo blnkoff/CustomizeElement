@@ -1,7 +1,6 @@
 class Toolbar {
     static querySelector = document.querySelector('.toolbar');
     static currentElement = document.querySelector('.element');
-
     static openHide = {
         toolbar: {
             querySelector: document.querySelector('.toolbar').firstElementChild,
@@ -11,27 +10,25 @@ class Toolbar {
             action() {
                 if (Toolbar.openHide.toolbar.querySelector.classList.contains('open')) {
                     Toolbar.openHide.toolbar.open();
-                } else if (Toolbar.openHide.toolbar.querySelector.classList.contains('hide')) {
+                } else {
                     Toolbar.openHide.toolbar.hide()
                 }
             },
             open() {
                 Toolbar.querySelector.style.height = '720px';
-                Toolbar.querySelector.firstElementChild.style.order = '8';
-                Toolbar.openHide.toolbar.chevron.querySelector.classList.remove('chevron-down');
-                Toolbar.openHide.toolbar.chevron.querySelector.classList.add('chevron-up');
-
-                Toolbar.openHide.toolbar.querySelector.classList.remove('open');
-                Toolbar.openHide.toolbar.querySelector.classList.add('hide');
+                Toolbar.openHide.toolbar.querySelector.style.order = '8';
+                Toolbar.openHide.toolbar.classSwap();
             },
             hide() {
                 Toolbar.querySelector.style.height = '80px';
-                Toolbar.querySelector.firstElementChild.style.order = '0';
-                Toolbar.openHide.toolbar.chevron.querySelector.classList.remove('chevron-up');
-                Toolbar.openHide.toolbar.chevron.querySelector.classList.add('chevron-down');
-
-                Toolbar.openHide.toolbar.querySelector.classList.remove('hide');
-                Toolbar.openHide.toolbar.querySelector.classList.add('open');
+                Toolbar.openHide.toolbar.querySelector.style.order = '0';
+                Toolbar.openHide.toolbar.classSwap();
+            },
+            classSwap() {
+                Toolbar.openHide.toolbar.chevron.querySelector.classList.toggle('chevron-down');
+                Toolbar.openHide.toolbar.chevron.querySelector.classList.toggle('chevron-up');
+                Toolbar.openHide.toolbar.querySelector.classList.toggle('open');
+                Toolbar.openHide.toolbar.querySelector.classList.toggle('hide');
             }
         },
         resizePopUp: {
@@ -40,38 +37,33 @@ class Toolbar {
                 querySelector: document.querySelector('.popUp-btn > .chevron'),
             },
             action() {
-                console.log(Toolbar.openHide.resizePopUp.querySelector.classList.contains('open'));
                 if (Toolbar.openHide.resizePopUp.querySelector.classList.contains('open')) {
                     Toolbar.openHide.resizePopUp.open();
-                } else if (Toolbar.openHide.resizePopUp.querySelector.classList.contains('hide')) {
-                    Toolbar.openHide.resizePopUp.hide()
+                } else {
+                    Toolbar.openHide.resizePopUp.hide();
                 }
             },
             open() {
                 document.querySelector('.resizePopUp').style.width = '902px';
                 Toolbar.openHide.resizePopUp.querySelector.style.order = '2';
-                Toolbar.openHide.resizePopUp.chevron.querySelector.classList.remove('chevron-right');
-                Toolbar.openHide.resizePopUp.chevron.querySelector.classList.add('chevron-left');
-
-                Toolbar.openHide.resizePopUp.querySelector.classList.remove('open');
-                Toolbar.openHide.resizePopUp.querySelector.classList.add('hide');
+                Toolbar.openHide.resizePopUp.classSwap();
             },
             hide() {
                 document.querySelector('.resizePopUp').style.width = '500px';
                 Toolbar.openHide.resizePopUp.querySelector.style.order = '0';
-                Toolbar.openHide.resizePopUp.chevron.querySelector.classList.remove('chevron-left');
-                Toolbar.openHide.resizePopUp.chevron.querySelector.classList.add('chevron-right');
-
-                Toolbar.openHide.resizePopUp.querySelector.classList.remove('hide');
-                Toolbar.openHide.resizePopUp.querySelector.classList.add('open');
+                Toolbar.openHide.resizePopUp.classSwap();
+            },
+            classSwap () {
+                Toolbar.openHide.resizePopUp.chevron.querySelector.classList.toggle('chevron-right');
+                Toolbar.openHide.resizePopUp.chevron.querySelector.classList.toggle('chevron-left');
+                Toolbar.openHide.resizePopUp.querySelector.classList.toggle('open');
+                Toolbar.openHide.resizePopUp.querySelector.classList.toggle('hide');
             }
         }
     };
-
     static font = {
         querySelector: document.querySelector('.font')
     };
-
     static underline = {
         querySelector: document.querySelector('.underline'),
         action() {
@@ -85,11 +77,9 @@ class Toolbar {
             }
         }
     };
-
     static italic = {
         querySelector: document.querySelector('.italic')
     };
-
     static color = {
         querySelector: document.querySelector('.color'),
         action() {
@@ -102,7 +92,6 @@ class Toolbar {
             }
         }
     };
-
     static resize = {
         querySelector: document.querySelector('.resize'),
         action() {
@@ -115,11 +104,9 @@ class Toolbar {
             }
         }
     };
-
     static download = {
         querySelector: document.querySelector('.download')
     };
-
     static lock = {
         querySelector: document.querySelector('.lock'),
         action() {
@@ -135,7 +122,6 @@ class Toolbar {
             }
         }
     };
-
     static onClick(event) {
         let dataAction = event.target.dataset.action;
         if (dataAction) {
@@ -157,7 +143,6 @@ class Toolbar {
             }
         }
     };
-
     static getBtnSelectors() {
         let selectors = [];
 
@@ -168,8 +153,6 @@ class Toolbar {
         return selectors;
     }
 }
-
-//Сделать класс для popUp
 
 Object.defineProperties(Toolbar, {
     'querySelector': {

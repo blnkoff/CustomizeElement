@@ -29,19 +29,18 @@ button::-moz-focus-inner {
   border: 0;
 }
 
+footer .author, .workspace .saves .wrapper .title, .workspace .viewing-area .element .text {
+  font-family: "Kharkiv Tone", sans-serif;
+  font-size: 32px;
+  text-align: center;
+}
+
 @font-face {
   font-family: "KharkivTone";
   font-style: normal;
   font-weight: 400;
   src: local("KharkivTone"), url("../fonts/KharkivTone.ttf") format("truetype");
 }
-footer .author, .workspace .saves .wrapper .title, .workspace .viewing-area .element .text {
-  font-family: "KharkivTone", sans-serif;
-  font-size: 32px;
-  font-weight: 400;
-  text-align: center;
-}
-
 body {
   background: linear-gradient(72.21deg, #141812 -0.34%, #161422 28.25%, #1C0D0D 68.52%, #1A0623 96.34%);
   display: grid;
