@@ -16,19 +16,41 @@ body {
   background: pink;
 }
 
+.fontPopUp {
+  display: flex;
+  gap: 35px;
+}
 
 .fontSelection {
+  .select {
+    width: 243px;
+    input {
+      width: 190px;
+    }
+  }
+}
+
+.sizeSelection {
+  .select {
+    width: 117px;
+
+    input {
+      width: 64px;
+    }
+  }
+}
+
+.selection {
   display: inline-block;
 
   .select {
     box-sizing: border-box;
     background: white;
-    width: 243px;
-    height: 45px;
     border-radius: 5px;
     display: flex;
     justify-content: center;
     gap: 10px;
+    height: 45px;
 
     .open {
       width: 27px;
@@ -41,12 +63,11 @@ body {
     }
 
     input {
+      height: 45px;
       font-family: Kharkiv Tone, serif;
       font-size: 20px;
       border: 0;
       padding: 0;
-      height: 45px;
-      width: 190px;
       background: none;
 
       &:focus {

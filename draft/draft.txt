@@ -1,150 +1,57 @@
-class Toolbar {
-    static querySelector = document.querySelector('.toolbar');
-    static currentElement = document.querySelector('.element');
+.fontSelection {
+  .select {
+    box-sizing: border-box;
+    background: white;
+    width: 243px;
+    height: 45px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
 
-    static openHide = {
-        querySelector: document.querySelector('.toolbar').firstElementChild,
-        chevron: {
-            querySelector: document.querySelector('.toolbar-btn > .chevron'),
-        },
-        action () {
-            if (Toolbar.openHide.querySelector.classList.contains('open')) {
-                Toolbar.openHide.open();
-            } else if (Toolbar.openHide.querySelector.classList.contains('hide')) {
-                Toolbar.openHide.hide()
-            }
-        },
-        open () {
-            Toolbar.querySelector.style.height = '720px';
-            Toolbar.querySelector.firstElementChild.style.order = '8';
-            Toolbar.openHide.chevron.querySelector.classList.remove('chevron-down');
-            Toolbar.openHide.chevron.querySelector.classList.add('chevron-up');
+    .open {
+      width: 27px;
+      height: 27px;
+      background: black url("../../img/icons/chevron up-down.svg");
+      background-size: 100%;
+      border-radius: 3px;
 
-            Toolbar.openHide.querySelector.classList.remove('open');
-            Toolbar.openHide.querySelector.classList.add('hide');
-        },
-        hide () {
-            Toolbar.querySelector.style.height = '80px';
-            Toolbar.querySelector.firstElementChild.style.order = '0';
-            Toolbar.openHide.chevron.querySelector.classList.remove('chevron-up');
-            Toolbar.openHide.chevron.querySelector.classList.add('chevron-down');
-
-            Toolbar.openHide.querySelector.classList.remove('hide');
-            Toolbar.openHide.querySelector.classList.add('open');
-        }
-    };
-
-    static font = {
-        querySelector: document.querySelector('.font')
-    };
-
-    static underline = {
-        querySelector: document.querySelector('.underline'),
-        action () {
-            let textToUnderline = Toolbar.currentElement.querySelector('.text').style.textDecoration;
-            if (textToUnderline === 'underline') {
-                Toolbar.currentElement.querySelector('.text').style.textDecoration = 'none';
-                Toolbar.underline.querySelector.style.background = '';
-            }
-            else    {
-                Toolbar.currentElement.querySelector('.text').style.textDecoration = 'underline';
-                Toolbar.underline.querySelector.style.background = '#464545';
-            }
-        }
-    };
-
-    static italic = {
-        querySelector: document.querySelector('.italic')
-    };
-
-    static color = {
-        querySelector: document.querySelector('.color'),
-        action () {
-            let wrapper = document.querySelector('.wrapper');
-            let visibilityStatus = wrapper.style.opacity === '1';
-            if (visibilityStatus) {
-                wrapper.style.opacity = '0';
-            }
-            else {
-                wrapper.style.opacity = '1';
-            }
-        }
-    };
-
-    static resize = {
-        querySelector: document.querySelector('.resize')
-    };
-
-    static download = {
-        querySelector: document.querySelector('.download')
-    };
-
-    static lock = {
-        querySelector: document.querySelector('.lock'),
-        action () {
-            let lockBtn = Toolbar.lock.querySelector;
-            if (lockBtn.classList.contains('unlocked')) {
-                lockBtn.classList.remove('unlocked');
-                lockBtn.classList.add('locked');
-                Toolbar.querySelector.removeEventListener("click", Toolbar.onClick);
-            }
-            else {
-                lockBtn.classList.remove('locked');
-                lockBtn.classList.add('unlocked');
-                Toolbar.querySelector.addEventListener("click",Toolbar.onClick);
-            }
-        }
-    };
-
-    static onClick (event) {
-        let dataAction = event.target.dataset.action;
-        console.log(dataAction);
-        if (dataAction) {
-            Toolbar[dataAction].action();
-        }
-    };
-
-    //Разобраться побольше в делигировании
-    //Добавить bold
-
-    static getBtnSelectors () {
-        let selectors = [];
-
-        for (let property in Toolbar) {
-            selectors.push(Toolbar[property].querySelector);
-        }
-
-        return selectors;
+      align-self: center;
     }
+
+    input {
+      font-family: Kharkiv Tone, serif;
+      font-size: 20px;
+      border: 0;
+      padding: 0;
+      height: 45px;
+      width: 190px;
+      background: none;
+
+      &:focus {
+        border: 0;
+        outline: 0;
+      }
+    }
+  }
+
+  ul {
+    display: none;
+    border: 1px solid;
+    margin: 0;
+    padding: 0;
+    @extend %KharkivTone;
+    font-size: 20px;
+    list-style-type: none;
+
+    li {
+      user-select: none;
+      text-align: left;
+      padding-left: 30px;
+    }
+  }
+
+  ul.on {
+    display: block;
+  }
 }
-
-Object.defineProperties(Toolbar, {
-    'querySelector': {
-        enumerable: false,
-        writable: true,
-        configurable: true
-    },
-    'currentElement': {
-        enumerable: false,
-        writable: true,
-        configurable: true
-    },
-});
-
-class JSONSave {
-
-}
-
-class fontFamily {
-
-}
-
-Toolbar.querySelector.addEventListener("click",Toolbar.onClick);
-Toolbar.lock.querySelector.addEventListener("click", Toolbar.lock.action);
-
-Toolbar.getBtnSelectors();
-
-
-
-
-

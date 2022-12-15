@@ -13,8 +13,9 @@
 <script defer src="toolbar.js"></script>
 <script defer src="../ColorPicker/iroLibrary.js"></script>
 <script defer src="../ColorPicker/colorPicker.js"></script>
+<script defer src="drop-down/dropdown.js"></script>
 <script defer src="popUp.js"></script>
-<script defer src="dropdown/dropdown.js"></script>
+
 
 <body>
 <div class="sidebar toolbar">
@@ -49,7 +50,7 @@
 
 <div class="resizePopUp popUp">
     <div class="width-field">
-        <input type="range" class="width" max="1000" value="360">
+        <input type="range" class="width" max="1000" value="360" tabindex="-1">
         <p class="size">360px</p>
         <p class="field-type">:W</p>
     </div>
@@ -59,14 +60,14 @@
     </div>
 
     <div class="height-field">
-        <input type="range" class="height" max="1000" value="130">
+        <input type="range" class="height" max="1000" value="130" tabindex="-1">
         <p class="size">130px</p>
         <p class="field-type">:H</p>
     </div>
 </div>
 
 <div class="fontPopUp popUp">
-    <div class='fontSelection'>
+    <div class='fontSelection selection'>
         <div class="select">
             <input type="text" class="fontPopUpInput fontSelectionInput">
             <button class="open"></button>
@@ -75,6 +76,18 @@
             <li>Kharkiv Tone</li>
             <li>Arial</li>
             <li>Calibri</li>
+        </ul>
+    </div>
+
+    <div class='sizeSelection selection'>
+        <div class="select">
+            <input type="text" class="fontPopUpInput sizeSelectionInput">
+            <button class="open"></button>
+        </div>
+        <ul class="list">
+            <li>20</li>
+            <li>32</li>
+            <li>42</li>
         </ul>
     </div>
 </div>

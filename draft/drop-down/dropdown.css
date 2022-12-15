@@ -1,11 +1,11 @@
-.fontSelection ul {
-  font-family: "KharkivTone", sans-serif;
+.selection ul {
+  font-family: "Kharkiv Tone", sans-serif;
   font-size: 32px;
   text-align: center;
 }
 
 @font-face {
-  font-family: "KharkivTone";
+  font-family: "Kharkiv Tone";
   font-style: normal;
   font-weight: 400;
   src: local("KharkivTone"), url("../../fonts/KharkivTone.ttf") format("truetype");
@@ -18,20 +18,38 @@ body {
   background: pink;
 }
 
-.fontSelection {
+.fontPopUp {
+  display: flex;
+  gap: 35px;
+}
+
+.fontSelection .select {
+  width: 243px;
+}
+.fontSelection .select input {
+  width: 190px;
+}
+
+.sizeSelection .select {
+  width: 117px;
+}
+.sizeSelection .select input {
+  width: 64px;
+}
+
+.selection {
   display: inline-block;
 }
-.fontSelection .select {
+.selection .select {
   box-sizing: border-box;
   background: white;
-  width: 243px;
-  height: 45px;
   border-radius: 5px;
   display: flex;
   justify-content: center;
   gap: 10px;
+  height: 45px;
 }
-.fontSelection .select .open {
+.selection .select .open {
   width: 27px;
   height: 27px;
   background: black url("../../img/icons/chevron up-down.svg");
@@ -39,20 +57,19 @@ body {
   border-radius: 3px;
   align-self: center;
 }
-.fontSelection .select input {
-  font-family: KharkivTone, serif;
+.selection .select input {
+  height: 45px;
+  font-family: Kharkiv Tone, serif;
   font-size: 20px;
   border: 0;
   padding: 0;
-  height: 45px;
-  width: 190px;
   background: none;
 }
-.fontSelection .select input:focus {
+.selection .select input:focus {
   border: 0;
   outline: 0;
 }
-.fontSelection ul {
+.selection ul {
   display: none;
   border: 1px solid;
   margin: 0;
@@ -60,12 +77,12 @@ body {
   font-size: 20px;
   list-style-type: none;
 }
-.fontSelection ul li {
+.selection ul li {
   user-select: none;
   text-align: left;
   padding-left: 30px;
 }
-.fontSelection ul.on {
+.selection ul.on {
   display: block;
 }
 

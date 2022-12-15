@@ -5,8 +5,15 @@ class popUp {
         fontSelection: {
             querySelector: document.querySelector('.fontSelectionInput'),
             action () {
-                console.log(popUp.currentElement);
+                console.log(popUp.font.fontSelection.querySelector.value);
                 popUp.currentElement.style.fontFamily = popUp.font.fontSelection.querySelector.value;
+            }
+        },
+        sizeSelection: {
+            querySelector: document.querySelector('.sizeSelectionInput'),
+            action () {
+                console.log(popUp.font.sizeSelection.querySelector.value);
+                popUp.currentElement.style.fontSize = popUp.font.sizeSelection.querySelector.value + 'px';
             }
         }
     };
@@ -40,17 +47,12 @@ class popUp {
     };
     static download = {};
     static opacityValidation(popUp) {
-        if (popUp.style.opacity === '1') {
-            return true;
-        } else {
-            return false;
-        }
+        return popUp.style.opacity === '1';
     };
     //Добавить валидацию в colorPicker.js из этого класса
 }
 
 popUp.resize.width.querySelector.addEventListener('input', popUp.resize.width.action);
 popUp.resize.height.querySelector.addEventListener('input', popUp.resize.height.action);
-popUp.font.fontSelection.querySelector.addEventListener('my-little-event', function (){
-    console.log(this);
-});
+popUp.font.fontSelection.querySelector.addEventListener('showList', popUp.font.fontSelection.action);
+popUp.font.sizeSelection.querySelector.addEventListener('showList', popUp.font.sizeSelection.action);

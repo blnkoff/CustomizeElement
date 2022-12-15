@@ -1,6 +1,6 @@
 @import "../css/nullstyle";
 @import "../css/templates";
-@import "dropdown/dropdown";
+@import "drop-down/dropdown";
 
 body {
   padding-bottom: 300px;
@@ -31,7 +31,7 @@ body {
     height: 80px;
   }
 
-  .toolbar-btn{
+  .toolbar-btn {
     display: grid;
     justify-items: center;
     align-items: center;
@@ -76,12 +76,12 @@ body {
   flex-direction: column;
   justify-content: center;
 
-  .text {
-    @extend %KharkivTone;
-  }
+
+  @extend %KharkivTone;
+
 }
 
-.wrapper{
+.wrapper {
   width: 340px;
   height: 314px;
   background: black;
@@ -115,6 +115,7 @@ body {
     grid-template-columns: 255px 78px 28px;
     grid-template-rows: 1fr;
     grid-gap: 15px;
+    tab-index: -1;
 
     p {
       @extend %KharkivTone;
@@ -166,7 +167,3 @@ body {
     border: 1px solid black;
   }
 }
-
-
-
-
