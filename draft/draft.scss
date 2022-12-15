@@ -38,7 +38,7 @@ body {
     transition: all 200ms;
 
     &[data-backgroundChange="true"]:hover {
-      background: #2F2F2F;
+      background: $popUp-color;
     }
   }
 
@@ -96,7 +96,7 @@ body {
 }
 
 .resizePopUp {
-  background: #2F2F2F;
+  background: $popUp-color;
   display: flex;
   border-radius: 0 15px 15px 0;
   gap: 10px;

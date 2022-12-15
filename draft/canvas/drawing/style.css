@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+
+}
+
+canvas {
+    display: block;
+    border: 3px solid black
+}
+
+.block {
+    background: blue;
+    width: 200px;
+    height: 50px;
+}

@@ -17,8 +17,12 @@ body {
 }
 
 .fontPopUp {
-  display: flex;
+  display: inline-flex;
+  padding: 15px;
   gap: 35px;
+  background: $popUp-color;
+  border-radius: 0px 15px 15px 0px;
+  max-height: 75px;
 }
 
 .fontSelection {
@@ -90,6 +94,7 @@ body {
       user-select: none;
       text-align: left;
       padding-left: 30px;
+      background: white;
     }
   }
 
