@@ -56,3 +56,8 @@ popUp.resize.width.querySelector.addEventListener('input', popUp.resize.width.ac
 popUp.resize.height.querySelector.addEventListener('input', popUp.resize.height.action);
 popUp.font.fontSelection.querySelector.addEventListener('showList', popUp.font.fontSelection.action);
 popUp.font.sizeSelection.querySelector.addEventListener('showList', popUp.font.sizeSelection.action);
+
+colorPicker.on('color:change', function(color) {
+    if (document.querySelector('.wrapper').style.opacity === '1')
+        document.querySelector('.element').style.background = color.hexString;
+});

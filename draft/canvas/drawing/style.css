@@ -3,17 +3,27 @@
     padding: 0;
 }
 
-body {
-
-}
-
 canvas {
     display: block;
     border: 3px solid black
 }
 
-.block {
+.undoAction, .clear {
+    user-select: none;
     background: blue;
     width: 200px;
     height: 50px;
+    border: 3px solid red;
+}
+
+
+.wrapper {
+    width: 340px;
+    height: 314px;
+    background: black;
+    border-radius: 15px;
+
+    display: grid;
+    align-items: center;
+    justify-items: center;
 }

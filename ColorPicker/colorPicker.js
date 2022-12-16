@@ -2,7 +2,7 @@ let colorPicker = new iro.ColorPicker("#colorPicker", {
     // Set the size of the color picker
     width: 266,
     // Set the initial color to pure red
-    color: "#f00",
+    color: "#000000",
     layoutDirection: "horizontal",
     borderWidth: 2,
     layout: [
@@ -19,8 +19,4 @@ let colorPicker = new iro.ColorPicker("#colorPicker", {
     ]
 });
 
-colorPicker.on('color:change', function(color) {
-    if (document.querySelector('.wrapper').style.opacity === '1')
-        document.querySelector('.element').style.background = color.hexString;
-});
 
