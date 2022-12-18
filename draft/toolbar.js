@@ -171,7 +171,3 @@ Toolbar.querySelector.addEventListener("click", Toolbar.onClick);
 Toolbar.lock.querySelector.addEventListener("click", Toolbar.lock.action);
 Toolbar.openHide.resizePopUp.querySelector.addEventListener("click", Toolbar.openHide.resizePopUp.action);
 //Исправить строку выше
-
-
-
-

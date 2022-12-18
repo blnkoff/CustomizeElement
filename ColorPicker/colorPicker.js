@@ -1,6 +1,6 @@
 let colorPicker = new iro.ColorPicker("#colorPicker", {
     // Set the size of the color picker
-    width: 266,
+    width: 201,
     // Set the initial color to pure red
     color: "#000000",
     layoutDirection: "horizontal",
@@ -18,5 +18,3 @@ let colorPicker = new iro.ColorPicker("#colorPicker", {
         },
     ]
 });
-
-
