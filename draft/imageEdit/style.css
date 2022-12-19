@@ -47,4 +47,8 @@ body {
   max-height: 80%;
 }
 
+input[type=file] {
+  color: white;
+}
+
 /*# sourceMappingURL=style.css.map */

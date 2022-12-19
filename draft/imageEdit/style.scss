@@ -1,6 +1,7 @@
 @import "../../css/templates";
 @import "../../css/nullstyle";
 
+
 body {
   background: linear-gradient(72.21deg, #141812 -0.34%, #161422 28.25%, #1C0D0D 68.52%, #1A0623 96.34%);
   height: 100vh;
@@ -19,6 +20,10 @@ body {
     max-width: 80%;
     max-height: 80%;
   }
+}
+
+input[type="file"] {
+  color: white;
 }
 
 

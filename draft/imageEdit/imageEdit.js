@@ -3,24 +3,36 @@ let url_input = document.querySelector('.url-input');
 let file_input = document.querySelector('.file-input');
 let submit = document.querySelector('.submit');
 let viewing_area = document.querySelector('.viewing-area');
+let submit2 = document.querySelector('.submit2');
 
-function insert (event) {
-    if (event.target.name === 'file') {
+function insertByUrl(event) {
+    let image = document.createElement('img');
+    image.src = url_input.value;
+    viewing_area.append(image);
+    image.ondragstart = function () {
+        return false;
+    };
 
-    }
-
-    if (event.target.name === 'url') {
-
-    }
-
-    if (event.target.name === 'submit') {
-        let image = document.createElement('img');
-        image.src = url_input.value;
-        viewing_area.append(image);
-        image.ondragstart = function() {
-            return false;
-        };
-    }
 }
 
-insert_image.addEventListener('click', insert);
+function insertByFile() {
+    let image = document.createElement('img');
+    let file = file_input.files[0];
+    let fileReader = new FileReader();
+
+    fileReader.readAsDataURL(file);
+
+    fileReader.onload = function () {
+        image.src = fileReader.result;
+    }
+
+    viewing_area.append(image);
+
+    image.ondragstart = function () {
+        return false;
+    };
+}
+
+
+submit.addEventListener('click', insertByUrl);
+submit2.addEventListener('click', insertByFile);
