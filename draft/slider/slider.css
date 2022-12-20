@@ -1,0 +1,36 @@
+body {
+  background: #a43c3c;
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  background-color: transparent;
+  width: 255px;
+  height: 16px;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  height: 16px;
+  cursor: pointer;
+  box-shadow: 2.4px 2.4px 6.2px rgba(7, 7, 163, 0.72), 0px 0px 2.4px rgba(8, 8, 187, 0.72);
+  background: linear-gradient(180deg, #D012FF 0%, #0B9191 100%);
+  border-radius: 21.6px;
+  color: #13bba4;
+}
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 2.4px 2.4px 9.5px rgba(4, 16, 14, 0.78), 0px 0px 2.4px rgba(9, 36, 32, 0.78);
+  border: 3px solid #FFFFFF;
+  border-radius: 8px;
+  background: linear-gradient(180deg, #A00BC5 0%, #1B5454 100%);
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -7.8px;
+  height: 32px;
+  width: 16.22px;
+}
+
+/* Track */
+
+/*# sourceMappingURL=slider.css.map */
