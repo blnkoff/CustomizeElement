@@ -1,33 +1,51 @@
-let insert_image = document.forms.insert_image;
 let url_input = document.querySelector('.url-input');
 let file_input = document.querySelector('.file-input');
 let submit = document.querySelector('.submit');
 let viewing_area = document.querySelector('.viewing-area');
 let submit2 = document.querySelector('.submit2');
 
-function  dragImage (event) {
+function dragImage(event) {
     let image = event.target;
     let shiftX = event.clientX - image.getBoundingClientRect().left;
     let shiftY = event.clientY - image.getBoundingClientRect().top;
+    let width = image.getBoundingClientRect().width;
+    let height = image.getBoundingClientRect().height;
 
     image.style.position = 'absolute';
+    image.style.maxWidth = width + 'px';
+    image.style.maxHeight = height + 'px';
 
-    function moveAt (event) {
-        let posX = event.clientX;
-        let posY = event.clientY;
 
-        image.style.top = posX + 'px';
-        image.style.left = posY + 'px';
+    moveAt(event.pageX, event.pageY);
+
+    function moveAt(pageX, pageY) {
+        image.style.left = pageX - shiftX + 'px';
+        image.style.top = pageY - shiftY + 'px';
     }
 
-    image.addEventListener('mousemove', moveAt);
+    function onMouseMove(event) {
+        if (event.clientX > viewing_area.getBoundingClientRect().right) {
+            viewing_area.scroll(10, 0);
+        }
 
-    function finishDrag () {
-        image.removeEventListener('mousemove', moveAt);
+        if (event.clientY > viewing_area.getBoundingClientRect().top) {
+            viewing_area.scroll(0, 10);
+        }
+
+        moveAt(event.pageX, event.pageY);
     }
 
-    image.addEventListener('mouseup', finishDrag);
+    document.addEventListener('mousemove', onMouseMove);
+
+    function stopDrag() {
+        document.removeEventListener('mousemove', onMouseMove);
+        image.onmouseup = null;
+    }
+
+    image.onmouseup = stopDrag;
+
 }
+
 
 function insertByUrl(event) {
     let image = document.createElement('img');
@@ -36,7 +54,6 @@ function insertByUrl(event) {
     image.ondragstart = function () {
         return false;
     };
-
     image.addEventListener('mousedown', dragImage);
 }
 
@@ -55,10 +72,9 @@ function insertByFile() {
 
     image.ondragstart = function () {
         return false;
-    }
+    };
+    image.addEventListener('mousedown', dragImage);
 }
-
-
 
 
 submit.addEventListener('click', insertByUrl);

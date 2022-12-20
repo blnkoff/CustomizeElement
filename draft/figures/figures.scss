@@ -16,15 +16,21 @@ body {
   border: 6px solid #4D4C4C;
   border-radius: 15px;
   overflow: auto;
-
-  img {
-    max-width: 80%;
-    max-height: 80%;
-  }
+  padding-left: 10px;
+  padding-top: 10px;
 }
 
-input[type="file"] {
+.figures {
   color: white;
+  margin-top: 30px;
+  display: flex;
+  gap: 30px;
+
+  .toolbar-btn {
+    background: gray;
+    padding: 20px;
+    user-select: none;
+  }
 }
 
 
