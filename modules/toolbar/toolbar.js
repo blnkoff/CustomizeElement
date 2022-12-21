@@ -15,12 +15,12 @@ class Toolbar {
                 }
             },
             open() {
-                Toolbar.querySelector.style.height = '720px';
-                Toolbar.openHide.toolbar.querySelector.style.order = '8';
+                Toolbar.querySelector.style.height = '660px';
+                Toolbar.openHide.toolbar.querySelector.style.order = '10';
                 Toolbar.openHide.toolbar.classSwap();
             },
             hide() {
-                Toolbar.querySelector.style.height = '80px';
+                Toolbar.querySelector.style.height = '60px';
                 Toolbar.openHide.toolbar.querySelector.style.order = '0';
                 Toolbar.openHide.toolbar.classSwap();
             },
@@ -44,12 +44,12 @@ class Toolbar {
                 }
             },
             open() {
-                document.querySelector('.resizePopUp').style.width = '902px';
+                document.querySelector('.resizePopUp').style.width = '882px';
                 Toolbar.openHide.resizePopUp.querySelector.style.order = '2';
                 Toolbar.openHide.resizePopUp.classSwap();
             },
             hide() {
-                document.querySelector('.resizePopUp').style.width = '500px';
+                document.querySelector('.resizePopUp').style.width = '480px';
                 Toolbar.openHide.resizePopUp.querySelector.style.order = '0';
                 Toolbar.openHide.resizePopUp.classSwap();
             },
@@ -62,7 +62,16 @@ class Toolbar {
         }
     };
     static font = {
-        querySelector: document.querySelector('.font')
+        querySelector: document.querySelector('.font'),
+        action () {
+            let fontPopUp = document.querySelector('.fontPopUp');
+            let visibilityStatus = fontPopUp.style.opacity === '1';
+            if (visibilityStatus) {
+                fontPopUp.style.opacity = '0';
+            } else {
+                fontPopUp.style.opacity = '1';
+            }
+        }
     };
     static underline = {
         querySelector: document.querySelector('.underline'),
@@ -73,7 +82,7 @@ class Toolbar {
                 Toolbar.underline.querySelector.style.background = '';
             } else {
                 Toolbar.currentElement.querySelector('.text').style.textDecoration = 'underline';
-                Toolbar.underline.querySelector.style.background = '#464545';
+                Toolbar.underline.querySelector.style.background = '#9861BC';
             }
         }
     };
@@ -83,12 +92,12 @@ class Toolbar {
     static color = {
         querySelector: document.querySelector('.color'),
         action() {
-            let wrapper = document.querySelector('.wrapper');
-            let visibilityStatus = wrapper.style.opacity === '1';
+            let colorPicker = document.querySelector('.colorPicker');
+            let visibilityStatus = colorPicker.style.opacity === '1';
             if (visibilityStatus) {
-                wrapper.style.opacity = '0';
+                colorPicker.style.opacity = '0';
             } else {
-                wrapper.style.opacity = '1';
+                colorPicker.style.opacity = '1';
             }
         }
     };
@@ -106,21 +115,6 @@ class Toolbar {
     };
     static download = {
         querySelector: document.querySelector('.download')
-    };
-    static lock = {
-        querySelector: document.querySelector('.lock'),
-        action() {
-            let lockBtn = Toolbar.lock.querySelector;
-            if (lockBtn.classList.contains('unlocked')) {
-                lockBtn.classList.remove('unlocked');
-                lockBtn.classList.add('locked');
-                Toolbar.querySelector.removeEventListener("click", Toolbar.onClick);
-            } else {
-                lockBtn.classList.remove('locked');
-                lockBtn.classList.add('unlocked');
-                Toolbar.querySelector.addEventListener("click", Toolbar.onClick);
-            }
-        }
     };
     static onClick(event) {
         let dataAction = event.target.dataset.action;
@@ -168,6 +162,6 @@ Object.defineProperties(Toolbar, {
 });
 
 Toolbar.querySelector.addEventListener("click", Toolbar.onClick);
-Toolbar.lock.querySelector.addEventListener("click", Toolbar.lock.action);
 Toolbar.openHide.resizePopUp.querySelector.addEventListener("click", Toolbar.openHide.resizePopUp.action);
 //Исправить строку выше
+console.log(Toolbar.openHide.resizePopUp.querySelector);

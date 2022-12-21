@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <title>Change Element</title>
     <link rel="shortcut icon" href="img/favicon 100x100.png" type="image/x-icon">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="modules/page/style.css">
 </head>
 <body>
 
-<script defer src="script.js"></script>
+<script defer src="modules/page/script.js"></script>
 
 <div class="container introduction">
     <img class="illustration" src="img/content/illustration.svg" alt="ELEMENT CUSTOMIZE" draggable="false">
@@ -20,16 +20,38 @@
 
 <div class="container workspace">
     <div class="sidebar toolbar">
-        <div class="open">
-            <img src="img/icons/chevron up-down.svg" alt="Open" class="chevron chevron-down" draggable="false">
+        <div class="open toolbar-btn" data-action="openHide" data-backgroundChange="false">
+            <img src="img/icons/chevron up-down.svg" alt="Open" class="chevron chevron-down" data-action="openHide">
         </div>
-        <div class="font"></div>
-        <div class="underline"></div>
-        <div class="italic"></div>
-        <div class="color"></div>
-        <div class="resize"></div>
-        <div class="download"></div>
-        <div class="lock"></div>
+        <div class="font toolbar-btn" data-action="font" data-backgroundChange="true" data-type="popUp">
+            <img src="img/icons/font.svg" alt="" data-action="font">
+        </div>
+        <div class="underline toolbar-btn" data-action="underline" data-backgroundChange="true">
+            <img src="img/icons/underline.svg" alt="" data-action="underline">
+        </div>
+        <div class="italic toolbar-btn" data-backgroundChange="true" data-action="italic">
+            <img src="img/icons/italic.svg" alt="">
+        </div>
+        <div class="figure toolbar-btn" data-backgroundChange="true" data-action="figure">
+            <img src="img/icons/rectangle.svg" alt="">
+        </div>
+        <div class="color toolbar-btn" data-backgroundChange="true" data-action="color" data-type="popUp">
+            <img src="img/icons/color.svg" alt="" data-action="color">
+        </div>
+        <div class="pencil toolbar-btn" data-backgroundChange="true" data-action="pencil">
+            <img src="img/icons/pencil.svg" alt="">
+        </div>
+        <div class="resize toolbar-btn" data-backgroundChange="true" data-action="resize" data-type="popUp">
+            <img src="img/icons/resize.svg" alt="" data-action="resize">
+        </div>
+        <div class="addImage toolbar-btn" data-backgroundChange="true" data-action="addImage">
+            <img src="img/icons/addImage.svg" alt="">
+        </div>
+        <div class="download toolbar-btn" data-backgroundChange="true" data-action="download" data-type="popUp">
+            <img src="img/icons/download.svg" alt="">
+        </div>
+        <div class="empty"></div>
+
     </div>
 
     <div class="viewing-area">

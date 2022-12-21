@@ -1,18 +1,18 @@
-@import "nullstyle";
-@import "templates";
+@import "../../css/nullstyle";
+@import "../../css/templates";
 
 @font-face {
-  font-family: "KharkivTone";
+  font-family: "Kharkiv Tone";
   font-style: normal;
   font-weight: 400;
   // Браузер сначала попробует найти шрифт локально
-  src: local("KharkivTone"),
+  src: local("Kharkiv Tone"),
     // Если не получилось, загрузит ttf
-  url("../fonts/KharkivTone.ttf") format("truetype");
+  url("../../fonts/KharkivTone.ttf") format("truetype");
 }
 
 body {
-  background: linear-gradient(72.21deg, #141812 -0.34%, #161422 28.25%, #1C0D0D 68.52%, #1A0623 96.34%);
+  background: linear-gradient(72.21deg, #20281E -0.34%, #2A2642 28.25%, #1C0D0D 68.52%, #3B0C52 96.34%);;
   display: grid;
   justify-items: center;
 }
@@ -128,7 +128,7 @@ body {
       justify-content: center;
 
       .text {
-        @extend %KharkivTone;
+        @extend  %KharkivTone;
       }
     }
   }

@@ -14,18 +14,13 @@
   box-sizing: border-box;
 }
 
-body {
-  background: pink;
-}
-
 .fontPopUp {
-  display: flex;
-  padding: 15px;
+  display: inline-flex;
+  padding: 7.5px;
   gap: 35px;
-  background: #2F2F2F;
-  border-radius: 0px 15px 15px 0px;
-  max-height: 75px;
-  max-width: 425px;
+  background: #50085B;
+  border-radius: 0 15px 15px 0;
+  max-height: 60px;
 }
 
 .fontSelection .select {
