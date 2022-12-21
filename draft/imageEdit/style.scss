@@ -18,8 +18,10 @@ body {
   overflow: auto;
 
   img {
-    max-width: 80%;
-    max-height: 80%;
+    max-width: 842*0.8px;
+    max-height: 553*0.8px;
+    user-select: none;
+    cursor: grab;
   }
 }
 
