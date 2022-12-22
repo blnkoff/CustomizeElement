@@ -18,6 +18,12 @@ class popUp {
         }
     };
     static color = {};
+    static pencil = {
+        querySelector: document.querySelector('.pencil'),
+        action () {
+
+        }
+    }
     static resize = {
         querySelector: document.querySelector('.resizePopUp'),
         width: {
@@ -57,7 +63,7 @@ popUp.resize.height.querySelector.addEventListener('input', popUp.resize.height.
 popUp.font.fontSelection.querySelector.addEventListener('showList', popUp.font.fontSelection.action);
 popUp.font.sizeSelection.querySelector.addEventListener('showList', popUp.font.sizeSelection.action);
 
-colorPicker.on('color:change', function(color) {
-    if (document.querySelector('.wrapper').style.opacity === '1')
-        document.querySelector('.element').style.background = color.hexString;
-});
+// colorPicker.on('color:change', function(color) {
+//     if (document.querySelector('.wrapper').style.opacity === '1')
+//         document.querySelector('.element').style.background = color.hexString;
+// });

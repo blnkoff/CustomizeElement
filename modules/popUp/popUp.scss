@@ -1,0 +1,88 @@
+@import "../../css/templates";
+
+.popUp {
+  position: absolute;
+  left: 330px;
+}
+
+.colorPicker {
+  transition: opacity 300ms;
+
+}
+
+.resizePopUp {
+  top: 437px;
+  background: $popUp-color;
+  display: inline-flex;
+  border-radius: 0 15px 15px 0;
+  gap: 10px;
+  width: 480px;
+  overflow: hidden;
+  transition: all 300ms;
+  opacity: 0;
+
+  .width-field {
+    padding-left: 20px;
+  }
+
+  .width-field, .height-field {
+    display: grid;
+    grid-template-columns: 255px 78px 28px;
+    grid-template-rows: 1fr;
+    grid-gap: 15px;
+    tab-index: -1;
+    align-items: center;
+
+    span {
+      @extend %KharkivTone;
+      font-size: 20px;
+      color: white;
+      display: grid;
+      justify-items: center;
+      align-items: center;
+    }
+
+    .size {
+      text-decoration: underline;
+    }
+  }
+
+  .open,
+  .hide {
+    min-height: 60px;
+    min-width: 60px;
+
+    display: grid;
+    justify-items: center;
+    align-items: center;
+
+    transition: transform 300ms;
+
+    &:hover {
+      .chevron-right {
+        transform: translateX(7px);
+      }
+
+      .chevron.chevron-left {
+        transform: rotate(180deg) translateX(7px);
+      }
+    }
+
+    .chevron {
+      transition: inherit;
+
+      &.chevron-left {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+
+.fontPopUp {
+  opacity: 0;
+  transition: opacity 300ms;
+  top: 77px;
+  input {
+    border: 1px solid black;
+  }
+}

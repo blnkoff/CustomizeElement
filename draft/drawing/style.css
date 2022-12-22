@@ -18,7 +18,7 @@ canvas {
     font-family: "Kharkiv Tone";
     font-style: normal;
     font-weight: 400;
-    src: local("KharkivTone"), url("../../../fonts/KharkivTone.ttf") format("truetype");
+    src: local("KharkivTone"), url("../../fonts/KharkivTone.ttf") format("truetype");
 }
 * {
     box-sizing: border-box;
@@ -79,4 +79,4 @@ canvas {
     align-items: center;
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=pencilPanel.css.map */

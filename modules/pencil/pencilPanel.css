@@ -10,20 +10,12 @@
   font-weight: 400;
   src: local("KharkivTone"), url("../../fonts/KharkivTone.ttf") format("truetype");
 }
-* {
-  box-sizing: border-box;
-}
-
-body {
-  background: black;
-}
-
 .pencilPanel {
+  margin-top: 10px;
   border-radius: 15px;
-  background: #50085B;
-  width: 841px;
+  background: linear-gradient(178.07deg, #771B96 1.66%, rgba(80, 8, 91, 0.9) 98.41%);
   height: 250px;
-  padding-left: 12px;
+  padding: 0 12px;
   color: white;
   display: inline-flex;
   gap: 72px;
@@ -38,7 +30,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 40px;
+  gap: 50px;
 }
 .pencilPanel .col2 .field {
   display: flex;
@@ -61,16 +53,17 @@ body {
   font-size: 20px;
 }
 .pencilPanel .col3 {
-  width: 80px;
+  width: 60px;
   display: flex;
   flex-direction: column;
-  padding: 5px 0;
+  padding: 20px 0;
+  gap: 15px;
 }
 .pencilPanel .col3 .pencilPanel-btn {
-  height: 80px;
+  height: 60px;
   display: grid;
   justify-items: center;
   align-items: center;
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=pencilPanel.css.map */

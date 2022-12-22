@@ -53,7 +53,7 @@ class Toolbar {
                 Toolbar.openHide.resizePopUp.querySelector.style.order = '0';
                 Toolbar.openHide.resizePopUp.classSwap();
             },
-            classSwap () {
+            classSwap() {
                 Toolbar.openHide.resizePopUp.chevron.querySelector.classList.toggle('chevron-right');
                 Toolbar.openHide.resizePopUp.chevron.querySelector.classList.toggle('chevron-left');
                 Toolbar.openHide.resizePopUp.querySelector.classList.toggle('open');
@@ -63,7 +63,7 @@ class Toolbar {
     };
     static font = {
         querySelector: document.querySelector('.font'),
-        action () {
+        action() {
             let fontPopUp = document.querySelector('.fontPopUp');
             let visibilityStatus = fontPopUp.style.opacity === '1';
             if (visibilityStatus) {
@@ -101,23 +101,39 @@ class Toolbar {
             }
         }
     };
+    static pencil = {
+        querySelector: document.querySelector('.pencil'),
+        action() {
+            let color = `rgb(152, 97, 188)`;
+            if (Toolbar.pencil.querySelector.style.background !== color)
+                Toolbar.pencil.querySelector.style.background = color;
+            else
+                Toolbar.pencil.querySelector.style.background = '';
+
+            draw();
+        },
+    };
     static resize = {
         querySelector: document.querySelector('.resize'),
         action() {
             let popUp = document.querySelector('.resizePopUp');
             let visibilityStatus = popUp.style.opacity === '1';
+            console.log(visibilityStatus);
             if (visibilityStatus) {
                 popUp.style.opacity = '0';
             } else {
                 popUp.style.opacity = '1';
+                console.log(popUp.style.opacity);
             }
         }
     };
     static download = {
         querySelector: document.querySelector('.download')
     };
+
     static onClick(event) {
         let dataAction = event.target.dataset.action;
+        console.log(event.target.dataset.action);
         if (dataAction) {
             if (dataAction !== "openHide") {
                 Toolbar[dataAction].action();
@@ -137,6 +153,7 @@ class Toolbar {
             }
         }
     };
+
     static getBtnSelectors() {
         let selectors = [];
 
@@ -164,4 +181,3 @@ Object.defineProperties(Toolbar, {
 Toolbar.querySelector.addEventListener("click", Toolbar.onClick);
 Toolbar.openHide.resizePopUp.querySelector.addEventListener("click", Toolbar.openHide.resizePopUp.action);
 //Исправить строку выше
-console.log(Toolbar.openHide.resizePopUp.querySelector);
