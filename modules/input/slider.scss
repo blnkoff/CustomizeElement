@@ -11,6 +11,7 @@ input[type=range] {
     cursor: pointer;
     box-shadow: 2.4px 2.4px 6.2px rgba(7, 7, 163, 0.72), 0px 0px 2.4px rgba(8, 8, 187, 0.72);
     background: linear-gradient(180deg, #D012FF 0%, #0B9191 100%);
+
     border-radius: 21.6px;
     color: #13bba4;
   }
@@ -27,6 +28,14 @@ input[type=range] {
 
     height: 32px;
     width: 16.22px;
+  }
+
+  &::-ms-fill-lower {
+    background: linear-gradient(180deg, #D012FF 0%, #0B9191 100%);
+  }
+
+  &::-ms-fill-upper {
+    background: gray;
   }
 }
 

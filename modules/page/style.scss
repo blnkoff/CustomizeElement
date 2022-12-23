@@ -74,6 +74,7 @@ body {
 
     .column {
       .viewing-area {
+        overflow: auto;
         position: relative;
         width: 1164px;
         height: 560px;

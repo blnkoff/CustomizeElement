@@ -28,11 +28,15 @@ class popUp {
         querySelector: document.querySelector('.resizePopUp'),
         width: {
             querySelector: document.querySelector('.width'),
+            event: new CustomEvent("elemChange", {detail: {type: "sizeChange"}}),
             action() {
                 if (popUp.opacityValidation(popUp.resize.querySelector)) {
-                    let currentValue = popUp.resize.width.querySelector.value+'px';
+                    let currentValue = popUp.resize.width.querySelector.value + 'px';
+                    let canvas = document.querySelector('canvas');
                     popUp.currentElement.style.width = currentValue;
                     popUp.resize.width.size.querySelector.textContent = currentValue;
+                    canvas.dispatchEvent(popUp.resize.width.event);
+                    console.log(popUp.resize.width.event);
                 }
             },
             size: {
@@ -43,8 +47,11 @@ class popUp {
             querySelector: document.querySelector('.height'),
             action() {
                 let currentValue = popUp.resize.height.querySelector.value+'px';
+                let canvas = document.querySelector('canvas');
                 popUp.currentElement.style.height = currentValue;
                 popUp.resize.height.size.querySelector.textContent = currentValue;
+                canvas.dispatchEvent(popUp.resize.width.event);
+                console.log(popUp.resize.width.event);
             },
             size: {
                 querySelector: document.querySelector('.height-field > .size')

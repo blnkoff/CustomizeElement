@@ -105,10 +105,15 @@ class Toolbar {
         querySelector: document.querySelector('.pencil'),
         action() {
             let color = `rgb(152, 97, 188)`;
-            if (Toolbar.pencil.querySelector.style.background !== color)
+            let pencilPanel = document.querySelector('.pencilPanel');
+            if (Toolbar.pencil.querySelector.style.background !== color) {
                 Toolbar.pencil.querySelector.style.background = color;
-            else
+                pencilPanel.style.opacity = '1';
+            }
+            else {
                 Toolbar.pencil.querySelector.style.background = '';
+                pencilPanel.style.opacity = '0';
+            }
 
             draw();
         },

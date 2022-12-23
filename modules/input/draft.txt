@@ -1,0 +1,35 @@
+let radioBtns = document.querySelectorAll('.image-radio');
+let labels = document.querySelectorAll('label');
+
+function toggle (event) {
+    if (event.target.checked) {
+        event.target.parentElement.querySelector('.circle').classList.add('on');
+    }
+
+    radioBtns.forEach(btn => {
+        if (!btn.checked) {
+            btn.parentElement.querySelector('.circle').classList.remove('on');
+        }
+    })
+}
+
+function clickByChecked (event) {
+    let input = event.target.parentElement.querySelector('input');
+    console.log(input.checked);
+    if (input.checked) {
+        event.target.querySelector('.circle').classList.remove('on');
+        input.checked = false;
+    }
+    else {
+        let notChecked = new CustomEvent ('notChecked');
+        input.dispatchEvent(notChecked);
+    }
+}
+
+radioBtns.forEach(btn => {
+    btn.addEventListener('change', toggle);
+});
+
+labels.forEach(label => {
+    label.addEventListener('click', clickByChecked);
+})

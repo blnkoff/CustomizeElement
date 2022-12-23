@@ -2,6 +2,7 @@ let viewing_area = document.querySelector('.viewing-area');
 let workspace = document.querySelector('.workspace');
 const canvas = document.querySelector('canvas');
 const ctx = canvas.getContext('2d');
+//Поправить с рисованием во время скролла
 
 let config = {
     lineWidth: 5,
@@ -14,8 +15,17 @@ let pencilLog = {
     pencilProperties: []
 }
 
-canvas.setAttribute('width', 1152);
-canvas.setAttribute('height', 548);
+canvas.setAttribute('width', viewing_area.getBoundingClientRect().width - 12) ;
+canvas.setAttribute('height', viewing_area.getBoundingClientRect().height - 12);
+
+function changeCanvasSize () {
+    console.log(viewing_area.scrollWidth - 12);
+    console.log(viewing_area.scrollHeight - 12);
+    canvas.style.top = '0';
+    canvas.style.left = '0';
+}
+
+canvas.addEventListener("elemChange", changeCanvasSize);
 
 function pencilValidation () {
     let pencil = document.querySelector('.pencil');
@@ -23,12 +33,7 @@ function pencilValidation () {
 }
 
 function draw() {
-    if (!pencilValidation()) {
-        console.log(pencilValidation());
-        canvas.removeEventListener("mousedown", startDraw);
-        canvas.removeEventListener("mouseup", stopDrawing);
-        canvas.onmousemove = null;
-    }
+    if (!pencilValidation()) return;
 
     let pencilSizeInput = document.querySelector('.pencilSize');
     let pencilOpacityInput = document.querySelector('.pencilOpacity');
@@ -40,10 +45,12 @@ function draw() {
     });
 
     function changePencilSize(event) {
+        if (!pencilValidation()) return;
         config.lineWidth = pencilSizeInput.value;
     }
 
     function changePencilOpacity(event) {
+        if (!pencilValidation()) return;
         ctx.globalAlpha = pencilOpacityInput.value;
     }
 
@@ -51,6 +58,8 @@ function draw() {
     pencilOpacityInput.addEventListener('change', changePencilOpacity);
 
     function startDraw (event) {
+        if (!pencilValidation()) return;
+
         ctx.lineWidth = config.lineWidth;
         ctx.lineJoin = 'round';
         ctx.lineCap = 'round';
@@ -66,12 +75,15 @@ function draw() {
     canvas.addEventListener("mouseup", stopDrawing);
 
     function recordMousePos(event) {
+        if (!pencilValidation()) return;
+
         let posX, posY;
         posX = event.clientX - viewing_area.getBoundingClientRect().left;
         posY = event.clientY - 44;
         pencilLog.actions[pencilLog.currentAction].push([posX, posY]);
         console.log("record");
-        console.log((event.clientX - viewing_area.getBoundingClientRect().left) + '-' + (event.clientY - 43));
+        console.log((posX) + '-' + (posY));
+        console.log(window.scrollY);
         drawLine(posX, posY);
     }
 
@@ -81,11 +93,14 @@ function draw() {
     }
 
     function stopDrawing() {
+        if (!pencilValidation()) return;
+
         canvas.onmousemove = null;
         pencilLog.currentAction++;
     }
 
     function undoAction() {
+        if (!pencilValidation()) return;
         if (pencilLog.currentAction !== 0) {
             pencilLog.actions.pop();
             pencilLog.pencilProperties.pop();
@@ -110,8 +125,10 @@ function draw() {
     }
 
     function clear() {
+        if (!pencilValidation()) return;
         pencilLog.actions = [];
         pencilLog.pencilProperties = [];
+        console.log(pencilLog.currentAction);
         pencilLog.currentAction = 0;
         ctx.clearRect(0, 0, canvas.width, canvas.height);
     }
