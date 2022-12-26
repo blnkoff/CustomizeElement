@@ -74,6 +74,11 @@ body {
 
     .column {
       .viewing-area {
+        img {
+          max-width: 80%;
+          max-height: 80%;
+        }
+
         overflow: auto;
         position: relative;
         width: 1164px;

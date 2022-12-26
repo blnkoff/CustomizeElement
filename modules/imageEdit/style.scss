@@ -1,5 +1,5 @@
 @import "../../css/templates";
-@import "../../css/nullstyle";
+@import "../../css/null-style";
 
 
 body {
@@ -22,11 +22,9 @@ body {
     max-height: 553*0.8px;
     user-select: none;
     cursor: grab;
-  }
-}
+    position: absolute;
 
-input[type="file"] {
-  color: white;
+  }
 }
 
 

@@ -1,12 +1,12 @@
 let url_input = document.querySelector('.url-input');
-let file_input = document.querySelector('.file-input');
-let submit = document.querySelector('.submit');
-let viewing_area = document.querySelector('.viewing-area');
-let submit2 = document.querySelector('.submit2');
+let add = document.querySelector('.add');
 let currentTarget = null;
 
 function dragTarget(event) {
     if (currentTarget !== null)
+        return;
+
+    if (document.querySelector('.pencil').style.background === 'rgb(152, 97, 188)')
         return;
 
     currentTarget = event.target;
@@ -15,19 +15,17 @@ function dragTarget(event) {
 
     let shiftX = event.clientX - currentTarget.getBoundingClientRect().left;
     let shiftY = event.clientY - currentTarget.getBoundingClientRect().top;
+    console.log(shiftX);
+    console.log(shiftY);
     let width = currentTarget.getBoundingClientRect().width;
     let height = currentTarget.getBoundingClientRect().height;
 
-    currentTarget.style.position = 'absolute';
     currentTarget.style.maxWidth = width + 'px';
     currentTarget.style.maxHeight = height + 'px';
 
-
-    moveAt(event.pageX, event.pageY);
-
-    function moveAt(pageX, pageY) {
-        currentTarget.style.left = pageX - shiftX + 'px';
-        currentTarget.style.top = pageY - shiftY + 'px';
+    function moveAt(posX, posY) {
+        currentTarget.style.left = posX - shiftX + 'px';
+        currentTarget.style.top = posY - shiftY + 'px';
     }
 
     function onMouseMove(event) {
@@ -37,7 +35,11 @@ function dragTarget(event) {
             return;
         }
 
-        moveAt(event.pageX, event.pageY);
+        let posX, posY;
+        posX = event.clientX - viewing_area.getBoundingClientRect().left;
+        posY = event.clientY - 44;
+
+        moveAt(posX, posY);
     }
 
     document.addEventListener('mousemove', onMouseMove);
@@ -57,6 +59,7 @@ function dragTarget(event) {
 function insertByUrl(event) {
     let image = document.createElement('img');
     image.src = url_input.value;
+    image.style.position = 'absolute';
     viewing_area.append(image);
     image.ondragstart = function () {
         return false;
@@ -66,34 +69,35 @@ function insertByUrl(event) {
         return false;
     };
 
-    image.addEventListener('mousedown', dragTarget);
-}
-
-function insertByFile() {
-    let image = document.createElement('img');
-    let file = file_input.files[0];
-    let fileReader = new FileReader();
-
-    fileReader.readAsDataURL(file);
-
-    fileReader.onload = function () {
-        image.src = fileReader.result;
-    }
-
-    viewing_area.append(image);
-
-    image.ondragstart = function () {
-        return false;
-    };
-
-    image.ondragend = function () {
-        return false;
-    };
+    console.log("insert");
 
     image.addEventListener('mousedown', dragTarget);
 }
 
-submit.addEventListener('click', insertByUrl);
-submit2.addEventListener('click', insertByFile);
+// function insertByFile() {
+//     let image = document.createElement('img');
+//     let file = file_input.files[0];
+//     let fileReader = new FileReader();
+//
+//     fileReader.readAsDataURL(file);
+//
+//     fileReader.onload = function () {
+//         image.src = fileReader.result;
+//     }
+//
+//     viewing_area.append(image);
+//
+//     image.ondragstart = function () {
+//         return false;
+//     };
+//
+//     image.ondragend = function () {
+//         return false;
+//     };
+//
+//     image.addEventListener('mousedown', dragTarget);
+// }
+
+add.addEventListener('click', insertByUrl);
 
 //исправить курсор

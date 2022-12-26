@@ -132,6 +132,20 @@ class Toolbar {
             }
         }
     };
+    static addImage = {
+        querySelector: document.querySelector('.addImage'),
+        action () {
+            let insertImagePopUp = document.querySelector('.insertImagePanel');
+            let visibilityStatus = insertImagePopUp.style.opacity === '1';
+
+            if (visibilityStatus) {
+                insertImagePopUp.style.opacity = '0';
+            }
+            else {
+                insertImagePopUp.style.opacity = '1';
+            }
+        }
+    }
     static download = {
         querySelector: document.querySelector('.download')
     };

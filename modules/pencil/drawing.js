@@ -40,7 +40,7 @@ function draw() {
     let undoActionBtn = document.querySelector('.undoAction');
     let clearBtn = document.querySelector('.clear');
 
-    colorPicker.on('color:change', function (color) {
+    pencilColorPicker.on('color:change', function (color) {
         config.color = color.rgbaString;
     });
 

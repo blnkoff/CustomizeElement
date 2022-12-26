@@ -80,4 +80,9 @@
   border: 1px solid black;
 }
 
+.insertImagePanel {
+  top: 497px;
+  opacity: 0;
+}
+
 /*# sourceMappingURL=popUp.css.map */

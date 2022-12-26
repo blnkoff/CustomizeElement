@@ -12,14 +12,20 @@
     <link rel="stylesheet" href="modules/input/dropdown.css">
     <link rel="stylesheet" href="modules/input/slider.css">
     <link rel="stylesheet" href="modules/pencil/pencilPanel.css">
+    <link rel="stylesheet" href="modules/imageEdit/insertImagePanel.css">
+    <link rel="stylesheet" href="modules/input/radio.css">
 
     <script src="modules/colorPicker/iroLibrary.js"></script>
     <script defer src="modules/page/script.js"></script>
     <script defer src="modules/toolbar/toolbar.js"></script>
     <script defer src="modules/pencil/drawing.js"></script>
-    <script defer src="modules/colorPicker/colorPicker.js"></script>
+    <script defer src="modules/colorPicker/pencilColorPicker.js"></script>
     <script defer src="modules/input/dropdown.js"></script>
     <script defer src="modules/popUp/popUp.js"></script>
+    <script defer src="modules/input/radio.js"></script>
+    <script defer src="modules/imageEdit/insertImagePanel.js"></script>
+    <script defer src="modules/imageEdit/imageEdit.js"></script>
+<!--    <script defer src="modules/imageEdit/virus.js"></script>-->
 </head>
 <body>
 
@@ -58,7 +64,7 @@
                 <img src="img/icons/resize.svg" alt="" data-action="resize">
             </div>
             <div class="addImage toolbar-btn" data-backgroundChange="true" data-action="addImage">
-                <img src="img/icons/addImage.svg" alt="">
+                <img src="img/icons/addImage.svg" alt="" data-action="addImage">
             </div>
             <div class="download toolbar-btn" data-backgroundChange="true" data-action="download" data-type="popUp">
                 <img src="img/icons/download.svg" alt="">
@@ -77,7 +83,7 @@
 
             <div class="pencilPanel">
                 <div class="col1 col">
-                    <div class="colorPicker" id="colorPicker"></div>
+                    <div class="colorPicker" id="pencilColorPicker"></div>
                 </div>
 
                 <div class="col2 col">
@@ -143,8 +149,6 @@
             </div>
         </div>
 
-        <!-- <div class="colorPicker" id="colorPicker"></div> -->
-
         <div class="fontPopUp popUp">
             <div class='fontSelection selection'>
                 <div class="select">
@@ -168,6 +172,37 @@
                     <li>32</li>
                     <li>42</li>
                 </ul>
+            </div>
+        </div>
+
+        <div class="insertImagePanel popUp">
+            <div class="row">
+                <div class="url-toggle toggle">
+                    <div class="image">
+                        <img src="img/icons/link.svg" alt="" draggable="false">
+                    </div>
+                    <div class="radio-toggle">
+                        <input type="radio" name="insertType" id="insertByUrl" value="url" checked class="radio-input">
+                        <label for="insertByUrl" class="btn-field">
+                            <div class="circle on"></div>
+                        </label>
+                    </div>
+                </div>
+                <div class="file-toggle toggle">
+                    <div class="image">
+                        <img src="img/icons/file-image.svg" alt="" draggable="false">
+                    </div>
+                    <div class="radio-toggle">
+                        <input type="radio" name="insertType" id="insertByFile" value="file" class="radio-input f">
+                        <label for="insertByFile" class="btn-field">
+                            <div class="circle"></div>
+                        </label>
+                    </div>
+                </div>
+                <input type="url" name="url" class="url-input">
+            </div>
+            <div class="add image">
+                <img src="img/icons/plus-square.svg" alt="" draggable="false">
             </div>
         </div>
     </div>
