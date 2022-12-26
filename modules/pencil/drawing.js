@@ -6,7 +6,8 @@ const ctx = canvas.getContext('2d');
 
 let config = {
     lineWidth: 5,
-    color: 'rgba(0, 0, 0, 1)',
+    color:
+        'rgba(0, 0, 0, 1)',
     colorJSON: '{"r":0,"g":0,"b":0,"a":1}'
 }
 let pencilLog = {
@@ -47,15 +48,20 @@ function draw() {
     function changePencilSize(event) {
         if (!pencilValidation()) return;
         config.lineWidth = pencilSizeInput.value;
+        document.querySelector('.size-field').querySelector('.size').textContent = pencilSizeInput.value + 'px';
     }
 
     function changePencilOpacity(event) {
         if (!pencilValidation()) return;
         ctx.globalAlpha = pencilOpacityInput.value;
+        let value = pencilOpacityInput.value * 100 + '%';
+        if (value.length <= 4) {
+            document.querySelector('.opacity-field').querySelector('.size').textContent = value;
+        }
     }
 
-    pencilSizeInput.addEventListener('change', changePencilSize);
-    pencilOpacityInput.addEventListener('change', changePencilOpacity);
+    pencilSizeInput.addEventListener('input', changePencilSize);
+    pencilOpacityInput.addEventListener('input', changePencilOpacity);
 
     function startDraw (event) {
         if (!pencilValidation()) return;

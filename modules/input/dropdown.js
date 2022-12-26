@@ -21,7 +21,6 @@ showList(document.querySelectorAll('.fontSelection'));
 showList(document.querySelectorAll('.sizeSelection'));
 
 function highlight (currentList) {
-    console.log();
     let currentElem = null;
     function colorize(event) {
         if (currentElem) return;

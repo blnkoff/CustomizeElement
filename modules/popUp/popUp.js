@@ -5,14 +5,14 @@ class popUp {
         fontSelection: {
             querySelector: document.querySelector('.fontSelectionInput'),
             action () {
-                console.log(popUp.font.fontSelection.querySelector.value);
+                if (!popUp.opacityValidation(popUp.font.querySelector)) return;
                 popUp.currentElement.style.fontFamily = popUp.font.fontSelection.querySelector.value;
             }
         },
         sizeSelection: {
             querySelector: document.querySelector('.sizeSelectionInput'),
             action () {
-                console.log(popUp.font.sizeSelection.querySelector.value);
+                if (!popUp.opacityValidation(popUp.font.querySelector)) return;
                 popUp.currentElement.style.fontSize = popUp.font.sizeSelection.querySelector.value + 'px';
             }
         }

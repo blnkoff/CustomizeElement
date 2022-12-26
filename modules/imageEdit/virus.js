@@ -6,11 +6,9 @@ function clickByVirus (event) {
     let img = document.createElement('img');
     img.src = 'img/virus2.jpg';
     img.style.position = 'absolute';
-    let posY = document.querySelector('.element').getBoundingClientRect().top - 90 + 'px';
-    img.style.top = `${posY} `;
     img.style.left = '50%';
+    img.style.top = '0px';
     img.style.width = '100px';
-    img
 
     viewing_area.append(img)
 }

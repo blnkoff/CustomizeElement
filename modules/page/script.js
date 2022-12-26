@@ -12,4 +12,4 @@ scrollDown.onclick = () =>  {
     footer.scrollIntoView(false);
 }
 
-//Добавить дерганье .illustration при движении мыши
+//Добавить дерганье.illustration при движении мыши

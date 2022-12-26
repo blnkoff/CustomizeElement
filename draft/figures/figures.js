@@ -44,17 +44,16 @@ function dragTarget(event) {
     }
     document.onmouseup = stopDrag;
 }
-
 function createRectangle () {
     let figure = document.createElement('div');
     figure.style.width = '300px';
     figure.style.height = '150px';
     figure.style.border = '1px solid black';
+    figure.style.position = 'absolute';
 
     figure.addEventListener('mousedown', dragTarget);
     viewing_area.append(figure);
 }
-
 function createEllipse () {
     let figure = document.createElement('div');
 
@@ -62,6 +61,7 @@ function createEllipse () {
     figure.style.height = '200px';
     figure.style.border = '1px solid black';
     figure.style.borderRadius = '100px';
+    figure.style.position = 'absolute';
 
     figure.addEventListener('mousedown', dragTarget);
     viewing_area.append(figure);
