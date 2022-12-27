@@ -81,8 +81,7 @@ body {
   align-items: center;
 }
 .editor .workspace .column .viewing-area img {
-  max-width: 80%;
-  max-height: 80%;
+  height: 80%;
 }
 .editor .workspace .column .viewing-area canvas {
   position: absolute;
@@ -95,6 +94,10 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+.editor .workspace .column .row {
+  display: flex;
+  gap: 30px;
 }
 .editor .workspace .saves {
   width: 181px;

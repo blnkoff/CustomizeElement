@@ -76,12 +76,12 @@ class Toolbar {
     static underline = {
         querySelector: document.querySelector('.underline'),
         action() {
-            let textToUnderline = Toolbar.currentElement.querySelector('.text').style.textDecoration;
+            let textToUnderline = Toolbar.currentElement.style.textDecoration;
             if (textToUnderline === 'underline') {
-                Toolbar.currentElement.querySelector('.text').style.textDecoration = 'none';
+                Toolbar.currentElement.style.textDecoration = 'none';
                 Toolbar.underline.querySelector.style.background = '';
             } else {
-                Toolbar.currentElement.querySelector('.text').style.textDecoration = 'underline';
+                Toolbar.currentElement.style.textDecoration = 'underline';
                 Toolbar.underline.querySelector.style.background = '#9861BC';
             }
         }
@@ -89,10 +89,36 @@ class Toolbar {
     static italic = {
         querySelector: document.querySelector('.italic')
     };
+    static figures = {
+        querySelector: document.querySelector('.figures'),
+        action () {
+            if (Toolbar.figures.querySelector.classList.contains('rectangle')) {
+                createRectangle();
+            }
+            else {
+                createEllipse();
+            }
+        },
+        swapMode (event) {
+            event.preventDefault();
+            let img = Toolbar.figures.querySelector.querySelector('img');
+            let path = "img/icons/";
+
+            if (Toolbar.figures.querySelector.classList.contains('rectangle')) {
+                img.src = `${path}ellipse.svg`;
+            }
+            else {
+                img.src = `${path}rectangle.svg`;
+            }
+            Toolbar.figures.querySelector.classList.toggle('rectangle');
+            Toolbar.figures.querySelector.classList.toggle('ellipse');
+            console.log("Event complete");
+        }
+    }
     static color = {
         querySelector: document.querySelector('.color'),
         action() {
-            let colorPicker = document.querySelector('.colorPicker');
+            let colorPicker = document.querySelector('.fillingPanel');
             let visibilityStatus = colorPicker.style.opacity === '1';
             if (visibilityStatus) {
                 colorPicker.style.opacity = '0';
@@ -149,7 +175,6 @@ class Toolbar {
     static download = {
         querySelector: document.querySelector('.download')
     };
-
     static onClick(event) {
         let dataAction = event.target.dataset.action;
         console.log(event.target.dataset.action);
@@ -172,7 +197,6 @@ class Toolbar {
             }
         }
     };
-
     static getBtnSelectors() {
         let selectors = [];
 
@@ -199,4 +223,5 @@ Object.defineProperties(Toolbar, {
 
 Toolbar.querySelector.addEventListener("click", Toolbar.onClick);
 Toolbar.openHide.resizePopUp.querySelector.addEventListener("click", Toolbar.openHide.resizePopUp.action);
+Toolbar.figures.querySelector.addEventListener('contextmenu', Toolbar.figures.swapMode);
 //Исправить строку выше

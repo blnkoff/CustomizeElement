@@ -1,6 +1,6 @@
-let backgroundColorPicker = new iro.ColorPicker("#backgroundColorPicker", {
+let fillingColorPicker = new iro.ColorPicker("#fillingColorPicker", {
     width: 201,
-    color: "#000000",
+    color: "#ffffff",
     layoutDirection: "horizontal",
     borderWidth: 2,
     layout: [
@@ -16,8 +16,9 @@ let backgroundColorPicker = new iro.ColorPicker("#backgroundColorPicker", {
         },
     ]
 });
-backgroundColorPicker.on('color:change', function(color) {
-     if (document.querySelector('.wrapper').style.opacity === '1')
-         document.querySelector('.element').style.background = color.hexString;
+fillingColorPicker.on('color:change', function(color) {
+     if (document.querySelector('.fillingPanel').style.opacity === '1') {
+         Toolbar.currentElement.style.background = color.hexString;
+     }
 });
 

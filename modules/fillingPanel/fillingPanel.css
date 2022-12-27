@@ -1,0 +1,13 @@
+.fillingPanel {
+  opacity: 0;
+  transition: all 300ms;
+  padding: 0 12px;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  margin-top: 10px;
+  border-radius: 15px;
+  background: linear-gradient(90deg, #771B96 0%, rgba(80, 8, 91, 0.9) 100%);
+}
+
+/*# sourceMappingURL=fillingPanel.css.map */

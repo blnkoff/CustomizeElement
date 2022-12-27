@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <title>Change Element</title>
@@ -12,9 +12,12 @@
     <link rel="stylesheet" href="modules/input/dropdown.css">
     <link rel="stylesheet" href="modules/input/slider.css">
     <link rel="stylesheet" href="modules/pencil/pencilPanel.css">
-    <link rel="stylesheet" href="modules/imageEdit/insertImagePanel.css">
+    <link rel="stylesheet" href="modules/addImage/insertImagePanel.css">
     <link rel="stylesheet" href="modules/input/radio.css">
+    <link rel="stylesheet" href="modules/fillingPanel/fillingPanel.css">
 
+    <script defer src="modules/editing/dragTarget.js"></script>
+    <script defer src="modules/figures/figures.js"></script>
     <script src="modules/colorPicker/iroLibrary.js"></script>
     <script defer src="modules/page/script.js"></script>
     <script defer src="modules/toolbar/toolbar.js"></script>
@@ -23,9 +26,11 @@
     <script defer src="modules/input/dropdown.js"></script>
     <script defer src="modules/popUp/popUp.js"></script>
     <script defer src="modules/input/radio.js"></script>
-    <script defer src="modules/imageEdit/insertImagePanel.js"></script>
-    <script defer src="modules/imageEdit/imageEdit.js"></script>
-<!--    <script defer src="modules/imageEdit/virus.js"></script>-->
+    <script defer src="modules/addImage/addImagePanel.js"></script>
+    <script defer src="modules/addImage/addImage.js"></script>
+    <script defer src="modules/editing/chooseTarget.js"></script>
+    <script defer src="modules/colorPicker/fillingColorPicker.js"></script>
+<!--    <script defer src="modules/addImage/virus.js"></script>-->
 </head>
 <body>
 
@@ -51,8 +56,8 @@
             <div class="italic toolbar-btn" data-backgroundChange="true" data-action="italic">
                 <img src="img/icons/italic.svg" alt="">
             </div>
-            <div class="figure toolbar-btn" data-backgroundChange="true" data-action="figure">
-                <img src="img/icons/rectangle.svg" alt="">
+            <div class="figures toolbar-btn rectangle" data-backgroundChange="true" data-action="figures">
+                <img src="img/icons/rectangle.svg" alt="" data-action="figures">
             </div>
             <div class="color toolbar-btn" data-backgroundChange="true" data-action="color" data-type="popUp">
                 <img src="img/icons/color.svg" alt="" data-action="color">
@@ -76,45 +81,50 @@
         <div class="column">
             <div class="viewing-area">
                 <canvas></canvas>
-                <div class="element">
-                    <p class="text">Your text will be placed here</p>
-                </div>
+<!--                <div class="element">-->
+<!--                    <p class="text">Your text will be placed here</p>-->
+<!--                </div>-->
             </div>
 
-            <div class="pencilPanel">
-                <div class="col1 col">
-                    <div class="colorPicker" id="pencilColorPicker"></div>
-                </div>
+            <div class="row">
+                <div class="pencilPanel">
+                    <div class="col1 col">
+                        <div class="colorPicker" id="pencilColorPicker"></div>
+                    </div>
 
-                <div class="col2 col">
-                    <div class="size-field field">
-                        <span class="field-type">Line Width</span>
-                        <div class="input-field">
-                            <input type="range" name="" class="pencilSize" value="5">
-                            <span class="size">5px</span>
+                    <div class="col2 col">
+                        <div class="size-field field">
+                            <span class="field-type">Line Width</span>
+                            <div class="input-field">
+                                <input type="range" name="" class="pencilSize" value="5">
+                                <span class="size">5px</span>
+                            </div>
+                        </div>
+
+                        <div class="opacity-field field">
+                            <span class="field-type">Opacity</span>
+                            <div class="input-field">
+                                <input type="range" name="" class="pencilOpacity" value="1" max="1" step="0.01">
+                                <span class="size">100%</span>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="opacity-field field">
-                        <span class="field-type">Opacity</span>
-                        <div class="input-field">
-                            <input type="range" name="" class="pencilOpacity" value="1" max="1" step="0.01">
-                            <span class="size">100%</span>
+
+                    <div class="col3 col">
+                        <div class="undoAction pencilPanel-btn">
+                            <img src="img/icons/corner-down-left.svg" alt="" class="return">
+                        </div>
+                        <div class="erase pencilPanel-btn">
+                            <img src="img/icons/eraser.svg" alt="" class="eraser">
+                        </div>
+                        <div class="clear pencilPanel-btn">
+                            <img src="img/icons/trashcan.svg" alt="" class="trashcan">
                         </div>
                     </div>
                 </div>
-
-
-                <div class="col3 col">
-                    <div class="undoAction pencilPanel-btn">
-                        <img src="img/icons/corner-down-left.svg" alt="" class="return">
-                    </div>
-                    <div class="erase pencilPanel-btn">
-                        <img src="img/icons/eraser.svg" alt="" class="eraser">
-                    </div>
-                    <div class="clear pencilPanel-btn">
-                        <img src="img/icons/trashcan.svg" alt="" class="trashcan">
-                    </div>
+                <div class="fillingPanel">
+                    <div class="colorPicker" id="fillingColorPicker"></div>
                 </div>
             </div>
         </div>
@@ -177,6 +187,10 @@
                     <li>32</li>
                     <li>42</li>
                 </ul>
+            </div>
+
+            <div class="textEdit">
+                <img src="img/icons/edit.svg" alt="">
             </div>
         </div>
 

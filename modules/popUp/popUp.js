@@ -4,23 +4,32 @@ class popUp {
         querySelector: document.querySelector('.fontPopUp'),
         fontSelection: {
             querySelector: document.querySelector('.fontSelectionInput'),
-            action () {
+            action() {
                 if (!popUp.opacityValidation(popUp.font.querySelector)) return;
                 popUp.currentElement.style.fontFamily = popUp.font.fontSelection.querySelector.value;
             }
         },
         sizeSelection: {
             querySelector: document.querySelector('.sizeSelectionInput'),
-            action () {
+            action() {
                 if (!popUp.opacityValidation(popUp.font.querySelector)) return;
                 popUp.currentElement.style.fontSize = popUp.font.sizeSelection.querySelector.value + 'px';
+            }
+        },
+        textEdit: {
+            querySelector: document.querySelector('.textEdit'),
+            action() {
+                if (!popUp.opacityValidation(popUp.font.querySelector)) return;
+                let text = document.createElement('p');
+                text.textContent = 'Your text will be placed here';
+                popUp.currentElement.append(text);
             }
         }
     };
     static color = {};
     static pencil = {
         querySelector: document.querySelector('.pencil'),
-        action () {
+        action() {
 
         }
     }
@@ -45,8 +54,11 @@ class popUp {
         },
         height: {
             querySelector: document.querySelector('.height'),
-            action() {
-                let currentValue = popUp.resize.height.querySelector.value+'px';
+            action(event) {
+                if (!popUp.opacityValidation(popUp.resize.querySelector)) {
+                    return;
+                }
+                let currentValue = popUp.resize.height.querySelector.value + 'px';
                 let canvas = document.querySelector('canvas');
                 popUp.currentElement.style.height = currentValue;
                 popUp.resize.height.size.querySelector.textContent = currentValue;
@@ -59,9 +71,11 @@ class popUp {
         }
     };
     static download = {};
+
     static opacityValidation(popUp) {
         return popUp.style.opacity === '1';
     };
+
     //Добавить валидацию в colorPicker.js из этого класса
 }
 
@@ -69,6 +83,7 @@ popUp.resize.width.querySelector.addEventListener('input', popUp.resize.width.ac
 popUp.resize.height.querySelector.addEventListener('input', popUp.resize.height.action);
 popUp.font.fontSelection.querySelector.addEventListener('showList', popUp.font.fontSelection.action);
 popUp.font.sizeSelection.querySelector.addEventListener('showList', popUp.font.sizeSelection.action);
+popUp.font.textEdit.querySelector.addEventListener('click', popUp.font.textEdit.action);
 
 // colorPicker.on('color:change', function(color) {
 //     if (document.querySelector('.wrapper').style.opacity === '1')

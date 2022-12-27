@@ -10,11 +10,21 @@
 
 .fontPopUp {
   display: inline-flex;
-  padding: 7.5px;
+  padding: 0 7.5px;
   gap: 35px;
   background: $popUp-color;
   border-radius: 0 15px 15px 0;
   max-height: 60px;
+  justify-content: center;
+  align-content: center;
+
+  .textEdit {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    height: 60px;
+    width: 60px;
+  }
 }
 
 .fontSelection {
@@ -37,6 +47,7 @@
 }
 
 .selection {
+  padding: 7.5px 0;
   display: inline-block;
 
   .select {

@@ -75,8 +75,7 @@ body {
     .column {
       .viewing-area {
         img {
-          max-width: 80%;
-          max-height: 80%;
+          height: 80%;
         }
 
         overflow: auto;
@@ -108,6 +107,10 @@ body {
 
           @extend  %KharkivTone;
         }
+      }
+      .row {
+        display: flex;
+        gap: 30px;
       }
     }
 
