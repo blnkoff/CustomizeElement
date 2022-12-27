@@ -80,9 +80,6 @@ body {
   justify-items: center;
   align-items: center;
 }
-.editor .workspace .column .viewing-area img {
-  height: 80%;
-}
 .editor .workspace .column .viewing-area canvas {
   position: absolute;
 }
