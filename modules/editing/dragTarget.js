@@ -32,8 +32,9 @@ function dragTarget(event) {
         }
 
         let posX, posY;
-        posX = event.clientX - viewing_area.getBoundingClientRect().left;
-        posY = event.clientY - 44;
+        posX = event.clientX - viewing_area.getBoundingClientRect().left - 6;
+        posY = event.clientY - viewing_area.getBoundingClientRect().top - 6;
+        console.log(viewing_area.clientY);
 
         moveAt(posX, posY);
     }

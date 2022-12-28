@@ -85,7 +85,7 @@ function draw() {
 
         let posX, posY;
         posX = event.clientX - viewing_area.getBoundingClientRect().left;
-        posY = event.clientY - 44;
+        posY = event.clientY - viewing_area.getBoundingClientRect().top - 6;
         pencilLog.actions[pencilLog.currentAction].push([posX, posY]);
         console.log("record");
         console.log((posX) + '-' + (posY));

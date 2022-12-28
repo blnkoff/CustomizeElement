@@ -1,5 +1,15 @@
 let currentElement = null;
 
+function deleteTarget (event) {
+    console.log(event.key);
+    if (event.key === 'Delete') {
+        currentElement.remove();
+        Toolbar.currentElement = null;
+        popUp.currentElement = null;
+    }
+
+}
+
 function chooseTarget (event) {
     if (currentElement) {
         currentElement.style.outline = 'none';
@@ -11,8 +21,6 @@ function chooseTarget (event) {
 
     currentElement = event.target
     currentElement.style.outline = '5px solid lightblue';
-    currentElement.style.resize = 'both';
-    currentElement.style.overflow = 'auto';
 
     Toolbar.currentElement = currentElement;
     popUp.currentElement = currentElement;
@@ -42,4 +50,5 @@ function resetTarget (event) {
         Toolbar.currentElement = null;
     }
 }
+
 viewing_area.addEventListener('contextmenu', resetTarget);
