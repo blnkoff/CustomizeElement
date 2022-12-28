@@ -121,8 +121,10 @@ class Toolbar {
             let colorPicker = document.querySelector('.fillingPanel');
             let visibilityStatus = colorPicker.style.opacity === '1';
             if (visibilityStatus) {
+                Toolbar.color.querySelector.style.background = '';
                 colorPicker.style.opacity = '0';
             } else {
+                Toolbar.color.querySelector.style.background = '#9861BC';
                 colorPicker.style.opacity = '1';
             }
         }
